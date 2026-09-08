@@ -1,0 +1,36 @@
+/* The stylesheet of the PDF resume, rendered by make-pdf.py through Chrome.
+   {base_pt}, {leading}, {page_size} and {page_margin} are filled in by
+   make-pdf.py; every other value lives here. Literal CSS braces are doubled
+   because the file is passed through str.format.
+   base_pt is the knob that pulls the document onto two pages: shrink it by
+   0.25pt steps. */
+@page {{ size: {page_size}; margin: {page_margin}; }}
+* {{ box-sizing: border-box; }}
+body {{
+  font-family: "Noto Sans", "Liberation Sans", Arial, sans-serif;
+  font-size: {base_pt}pt; line-height: {leading}; color: #14181f;
+  margin: 0; -webkit-print-color-adjust: exact;
+}}
+h1 {{ font-size: 19pt; margin: 0 0 2pt; font-weight: 650; }}
+.tagline {{ font-size: 10.5pt; font-weight: 600; color: #1f2a3a; margin: 0 0 1pt; }}
+.tagline em {{ font-weight: 500; font-style: normal; color: #55606f; }}
+.contact {{ font-size: 8.6pt; color: #55606f; margin: 0 0 9pt; }}
+h2 {{
+  font-size: 9.5pt; text-transform: uppercase; font-weight: 700;
+  color: #1f2a3a; border-bottom: 0.6pt solid #c4ccd6;
+  margin: 10pt 0 4pt; padding-bottom: 1.5pt;
+}}
+h3 {{ font-size: 10.6pt; font-weight: 650; margin: 7pt 0 0; }}
+h4, .project {{ font-size: 9.8pt; font-weight: 650; margin: 5pt 0 0; color: #22303f; }}
+h1, h2, h3, h4, .project {{ break-after: avoid; page-break-after: avoid; }}
+p {{ margin: 1.5pt 0 3pt; }}
+.when {{ float: right; font-size: 8.8pt; font-weight: 500; color: #55606f; }}
+h3, h4, .project {{ overflow: hidden; }}
+ul {{ margin: 2pt 0 4pt; padding-left: 0; list-style: none; }}
+li {{ margin: 0 0 2.2pt; padding-left: 7pt; text-indent: -7pt;
+     break-inside: avoid; page-break-inside: avoid; }}
+a {{ color: inherit; text-decoration: none; }}
+strong {{ font-weight: 650; }}
+blockquote {{ margin: 0 0 6pt; color: #55606f; font-style: italic; }}
+hr {{ border: 0; border-top: 0.6pt solid #d6dce4; margin: 8pt 0; }}
+.stack {{ font-size: 9.2pt; color: #3c4654; }}
