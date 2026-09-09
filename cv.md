@@ -30,8 +30,10 @@ Experience with:
 
 **Key accomplishments:**
 
+- **Scope:** Carried the backend and the infrastructure of three mobile products in parallel — 1M+, 100K+, and 1M+ users — as the sole backend engineer on all three.
+- **API ownership:** Designed the APIs the Android, iOS, and admin clients were built against, and negotiated their shape with the mobile and product teams.
 - **System Stabilization & Recovery:** Recovered three legacy products to a deployable, stable state; the measured outcomes are in the project sections below.
-- **Documentation:** Maintained the feature, API, and infrastructure documentation for all three products in Confluence, with PlantUML diagrams for flows and integrations — the reference used by the QA and Mobile squads.
+- **Documentation:** Maintained the feature, API, and infrastructure documentation for all three products in Confluence, with PlantUML diagrams for flows and integrations — the single reference that kept QA, the Android and iOS developers, and product on the same picture of the system.
 - **Testing & Reliability:** Introduced unit, integration, and E2E test suites across the three products; after that only isolated defects reached production.
 - **Infrastructure:** Rebuilt the logging and monitoring of the products, on Grafana and ELK respectively, to make production incidents diagnosable.
 
@@ -40,9 +42,12 @@ The backend for a mobile application for call recording and voice-to-text transc
 
 **Key accomplishments:**
 
-- Took over a product with severe deployment issues: code spread over 30 repositories, parts of it missing from version control entirely, and package versions drifted apart across services.
+- Sole backend engineer on the product: owned every backend feature from design to release, together with the build, deployment, and production support behind it.
+- Took over a product with severe issues: code spread over 30 repositories, parts of it missing from version control entirely, and package versions drifted apart across services.
 - Recovered the missing pieces, realigned the dependencies, and restored the build and deployment of the whole application in about six months.
-- Migrated purchases and subscriptions to StoreKit 2.
+- Reworked the registration, purchase, and subscription handling, migrating the purchases to StoreKit 2.
+- Identified several key features that had been missing and drove them to release.
+- Covered the routine maintenance and debugging cases with scripting.
 
 **Stack:** Microservices, TypeScript, Node.js, Express, Koa, MySQL, BullMQ, Redis, AWS, Docker, Postman
 
@@ -51,7 +56,8 @@ The backend and admin site for the mobile homework assistant application.
 
 **Key accomplishments:**
 
-- Owned the backend from API design to deployment, including cross-device synchronization of the solution history, append-only log for spend analysis, and third-party identity and attribution (Sign in with Apple and Google, AppsFlyer).
+- Sole backend engineer on the product: owned the backend and the infrastructure, and drove the API the mobile client and the admin site were built against.
+- Delivered cross-device synchronization of the solution history, an append-only log for spend analysis, and third-party identity and attribution (Sign in with Apple and Google, AppsFlyer).
 - Led the admin site: owned the design of the solution, bootstrapped the application and implemented its foundation — monorepo, authentication, backend communication, state management, builds and deployments — then reviewed, hardened, and released the features implemented by the frontend developers.
 - Redesigned the LLM pipeline after the initial implementation proved unreliable.
 
@@ -62,11 +68,13 @@ The backend for a mobile fax application.
 
 **Key accomplishments:**
 
+- Sole backend engineer on the product: owned the backend and the infrastructure, from the vendor integrations to production support, and set the technical direction for the mobile developers building against it.
 - Took over a delivery path that failed on 10–20% of transmissions and brought the failure rate down to 5–10% within six months.
 - Traced the causes across infrastructure, the database, and a long tail of defects; the unattended service restarts and application hangs stopped altogether.
+- Recovered the delivery analytics, which had stopped working, then reworked and optimized the pipeline behind it — the failures only became traceable after that.
 - Built fax reception end to end, including automated procurement of virtual numbers from the telephony vendor.
 
-**Stack:** TypeScript, Node.js, Koa,  PostgreSQL, BullMQ, Redis, Prometheus, Grafana, AWS, Docker, Mocha, Postman
+**Stack:** TypeScript, Node.js, Koa, PostgreSQL, BullMQ, Redis, Prometheus, Grafana, AWS, Docker, Mocha, Postman
 
 ### Lead Software Engineer with multi-project focus — [Exadel](https://exadel.com/)
 **09.2010 – 07.2023**
