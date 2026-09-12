@@ -46,7 +46,7 @@ The backend for a mobile application for call recording and voice-to-text transc
 - Recovered the missing pieces, realigned the dependencies, and restored the build and deployment of the whole application in about six months.
 - Reworked the registration, purchase, and subscription handling, migrating the purchases to StoreKit 2.
 - Identified several key features that had been missing and drove them to release.
-- Wrote the operational runbook for the product — analytic, troubleshooting, maintenance, and debugging — with a script behind each recurring case.
+- Wrote the operational runbook for the product — analytics, troubleshooting, maintenance, and debugging — with a script behind each recurring case.
 
 **Stack:** Microservices, TypeScript, Node.js, Express, Koa, MySQL, BullMQ, Redis, AWS, Docker, Postman
 
@@ -77,6 +77,13 @@ The backend for a mobile fax application.
 
 ### Lead Software Engineer with multi-project focus — [Exadel](https://exadel.com/)
 **06.2013 – 07.2023**
+
+**Key accomplishments:**
+
+- Mentored developers on every project of the decade — many of them went on to senior positions, and several I coached one-on-one for as long as two years each.
+- Taught at the Belarusian State University for two years on behalf of Exadel.
+- Co-developed and rolled out the engineering grading system for a 1000+ person company: how technical level was assessed, and how career paths were laid out for the engineers.
+- Trained the engineers who ran the technical interviews.
 
 #### Project: Inter-service communication platform — 05.2019 – 07.2023
 An SDK platform for cross-service communication. The purpose is to unify the API of internal long-lived RESTful services within the large department. Used by numerous product teams.
@@ -120,10 +127,8 @@ The multi-platform (Android, iOS, MacOS, Windows) reader application integrated 
 
 **Key accomplishments:**
 
-- Design and implementation of complicated components — cross-platform API, full-text search, HTTP client, epub conversion and instrumentation, background task scheduler, persistence layer, and diagnostics.
+- Owned the hardest modules of the application from design through maintenance: the cross-platform API, full-text search, HTTP client, epub conversion and instrumentation, background task scheduler, persistence layer, and diagnostics.
 - Optimized core processing for a proprietary book format, enabling seamless rendering of ultra-large files that previously caused most native reading applications to crash.
-
-**Responsibilities included:** Meetings; Problem-solving and troubleshooting; Requirements analysis; Code review; Mentoring and coaching; Cross-platform layer design and maintenance.
 
 **Stack:** Angular, TypeScript, WebSQL, Cordova, NW.js, Node.js, HTTP, Git, Jira
 
@@ -140,12 +145,14 @@ An independent startup, taken on as a side project to go deep on databases. The 
 #### Projects: VPI OnePlan Transport™, VPI Network Optimizer™, VPI Network Configurator™, VPI TransportMaker™, VPI ServiceMaker™
 The set of CAD-like software solutions for design, dimensioning, optimizing, planning of optical networks.
 
-**Key accomplishments:**
-- Design and implementation of the network editor and visualization (2D rendering); Analysis: what-if, hierarchical, routing; Import/export, reporting and persistence API redesign; Domain and application model design; Internal DSL implementation.
+**Selected accomplishments over the twelve years:**
+- Designed the domain and application model and the architecture behind it, and implemented the internal DSL on top of it.
+- Automated the applications with scripting built on that model, so design and analysis work could be driven programmatically instead of through the UI.
+- Redesigned and reimplemented the network editor and visualization (2D rendering) and the what-if, hierarchical, and routing analyses, along with the import/export, reporting, and persistence APIs.
 - Optimized model architecture and runtime memory efficiency, achieving a 10x reduction in memory footprint and CPU consumption for large-scale models and complex computations.
 
 **Stack:** .NET 1.0–3.5, LINQ, NUnit, GDI+, DevExpress, Redgate ANTS Profiler, JetBrains dotTrace, Visual Studio, SSCLI, .NET Reflector
 
 ## Education
 
-**MC CS: Belarusian State University of Informatics and Radioelectronics**, Minsk, Belarus — 2002
+**Engineer's degree in Computer Science: Belarusian State University of Informatics and Radioelectronics**, Minsk, Belarus — 2002
