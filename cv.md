@@ -90,11 +90,11 @@ An SDK platform for cross-service communication. The purpose is to unify the API
 
 **Key accomplishments:**
 
-- Owned the TypeScript and Node.js side of the platform among six engineers, each covering a different stack — shared code review, the common test suites, and troubleshooting.
-- Single-handedly implemented the server-side OData protocol SDK — parsing, interpretation, and (de)serialization of the SQL-like query language — and designed the framework built on top of it; the architecture is mine. OData is a large and intricate specification, and this was the most demanding engineering work of my career.
-- Built it under TDD, with an extensive suite pinning the behavior of the protocol down to its edge cases.
-- Revived the abandoned legacy client, brought it back to its former glory, added OData 4, and gave it a new query builder.
-- Optimized and polished the OData pipeline architecture, achieving performance parity with native .NET and Java implementations for large-scale data processing.
+- Owned the TypeScript/Node side of the platform SDK in a multi-stack team of six, sharing the review and the test suites across stacks.
+- Single-handedly implemented the server-side OData protocol SDK — parsing, interpretation, and (de)serialization of the SQL-like query language — and designed the framework built on top of it. OData is a large and intricate specification; the SDK covers it down to its edge cases.
+- Optimized the OData pipeline architecture to performance parity with the native .NET and Java implementations for large-scale data processing.
+- Revived the abandoned client library: restored it to working order, added OData 4, and gave it a query-builder DSL.
+- Built the SDK under TDD, with a suite pinning the protocol's behavior down to its edge cases, and wrote an asymmetric-matcher library — a small DSL for partial expectations — that kept those tests readable as the coverage grew.
 
 **Stack:** TypeScript, Node.js, NestJS, Mocha, Apache Benchmark, GraphQL, Docker, AWS, Postman, Fiddler, Maven, Java, .NET, Jenkins, Confluence, Jira
 
@@ -126,9 +126,11 @@ A reference application for large-scale corporate websites — the blueprint and
 The multi-platform (Android, iOS, MacOS, Windows) reader application integrated into the Customer's ecosystem. Its main users were lawyers of all kinds.
 
 **Key accomplishments:**
+**Key accomplishments:**
 
 - Owned the hardest modules of the application from design through maintenance: the cross-platform API, full-text search, HTTP client, epub conversion and instrumentation, background task scheduler, persistence layer, and diagnostics.
 - Optimized core processing for a proprietary book format, enabling seamless rendering of ultra-large files that previously caused most native reading applications to crash.
+- Co-authored the application state and automation model, which allowed developers to write plugin-like modules, e.g. renting.
 
 **Stack:** Angular, TypeScript, WebSQL, Cordova, NW.js, Node.js, HTTP, Git, Jira
 
