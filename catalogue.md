@@ -1,145 +1,147 @@
 # Pavel Husakouski
+[phusakouski@gmail.com](mailto:phusakouski@gmail.com) · [LinkedIn](https://www.linkedin.com/in/pavel-husakouski/) · +375(29)133-79-01 · [@Pauelito](https://t.me/Pauelito)
 
-[phusakouski@gmail.com](mailto:phusakouski@gmail.com) · [LinkedIn](https://www.linkedin.com/in/pavel-husakouski/) · +375 (29) 133-79-01 · [@Pauelito](https://t.me/Pauelito)
-
-> I am proud of my contribution to all of the projects below. My attitude is the strongest of my skills!
+**Senior Software Engineer** — platform SDKs, recovery of legacy systems
 
 ## Summary of Qualifications
 
-- 20+ years of experience in developing enterprise applications
-- Experience with AI, agent and spec-driven development
-- Strong understanding of software design and principles, architecture
-- Programming practices — TDD, code-review, refactoring, functional testing, E2E testing
-- Good understanding and horizon in Computer Science
+- 25 years of experience in developing enterprise and consumer applications
+- Spec-driven and agent-assisted development, TDD, code review, refactoring, functional/E2E testing
 - Cross-team collaboration, team coordination, coaching, mentoring
+- English: B2 (Upper-Intermediate)
 
 Experience with:
-
-- Node, Nest, Express, AWS, GraphQL, OData, .Net
-- Backend, Frontend, API, DSL, and framework design
+- Node.js, NestJS, Express, AWS, GraphQL, OData, .NET
 - TypeScript, C#, Python, C++, SQL
 - Vue.js, Pinia, Angular
-- Relational databases, PostgreSQL, MySQL, Redis, DynamoDB, ElasticSearch
+- Relational and NoSQL databases — PostgreSQL, MySQL, Redis, DynamoDB
+- Elasticsearch, Grafana, Prometheus, Kibana
 - BullMQ, NATS
-- Telnyx, Twilio, Plivo, Apple Store Server SDK
-- OpenAI, Anthropic, Gemini
+- LLM APIs — OpenAI, Anthropic, Gemini
 
 ## Professional Experience
 
 ### Backend Software Engineer with multi-project focus — AlpariGroup
-**10.2023 – 10.2026**
+**10.2023 – present**
 
-**Key accomplishments:**
+**Key accomplishments**
 
-- **System Stabilization & Recovery:** Successfully audited fragmented codebases and overhauled infrastructure for multiple products, reconstructing legacy systems to operational status and reducing application downtime and crashes by at least 2-3x.
-- **Architecture & Feature Engineering:** Designed and implemented critical product features, and full-stack development of Admin Dashboards that streamlined internal operations.
-- **Process & Documentation Optimization:** Streamlined cross-team collaboration with QA and Mobile squads by establishing and maintaining comprehensive, up-to-date API and infrastructure documentation.
-- **Testing & Reliability:** Introduced robust unit, functional, and e2e testing suites across projects to enhance solution reliability and ensure predictable, stable product delivery.
-- **Incident Management:** Overhauled infrastructure logging and monitoring configurations, significantly reducing the troubleshooting and resolution time for production incidents.
+- **Scope:** Carried the backend and the infrastructure of three mobile products in parallel — 100K+ to 1M+ users each — as the sole backend engineer on all three.
+- **API ownership:** Designed the APIs the Android, iOS, and admin clients were built against, and negotiated their shape with the mobile teams.
+- **System Stabilization & Recovery:** Recovered three legacy products to a deployable, stable state.
+- **Documentation:** Kept the feature, API, and infrastructure documentation of all three products in Confluence, with PlantUML — the reference for QA and the mobile developers.
+- **Testing & Reliability:** Introduced unit, integration, and E2E test suites; after that only isolated defects reached production.
+- **Infrastructure:** Rebuilt logging and monitoring on Grafana and ELK, which made incidents diagnosable.
 
-#### Project: NDA mobile call recording assistant, 1M+ users — 10.2023 – 10.2026
-The backend for the mobile application for call recording and voice-to-text transcription.
+#### Project: NDA mobile call recording assistant, 1M+ users — 10.2023 – present
+The backend for a mobile application for call recording and voice-to-text transcription.
 
-**Stack:** Microservices, TypeScript, Node, Express, Koa, MySQL, BullMQ, Redis, AWS, Docker, Postman
+**Key accomplishments**
+
+- Owned every backend feature from design to release, plus the build, deployment, and production support.
+- Took over a product spread over 30 repositories, with parts of it missing from version control and package versions out of sync.
+- Recovered the missing pieces, realigned the dependencies, and restored the build and deployment of the whole application in about six months.
+- Reworked the registration, purchase, and subscription handling, migrating the purchases to StoreKit 2.
+- Identified several key features that had been missing and drove them to release.
+- Wrote the operational runbook for recurring cases — troubleshooting, maintenance, analytics.
+
+**Stack:** Microservices, TypeScript, Node.js, Express, Koa, MySQL, BullMQ, Redis, AWS, Docker
 
 #### Project: NDA AI education assistant, 100K+ users — 10.2023 – 03.2026
 The backend and admin site for the mobile homework assistant application.
 
-**Stack:** TypeScript, Node, NestJS, Mocha, PostgreSQL, Redis, AWS, Docker, Postman
+**Key accomplishments**
+
+- Owned the backend and the infrastructure, and drove the API for the mobile client and the admin site.
+- Delivered cross-device synchronization of the solution history, an append-only log for spend analysis, and identity and attribution (Apple, Google, AppsFlyer).
+- Led the admin site: built its foundation — monorepo, authentication, backend communication, state management, deployments — then reviewed, hardened, and released the frontend developers' work.
+- Redesigned the LLM pipeline after the initial implementation proved unreliable.
+
+**Stack:** TypeScript, Node.js, NestJS, OpenAPI, PostgreSQL, Redis, Prometheus, Grafana, AWS, Docker, Mocha, GitLab
 
 #### Project: NDA fax transmission/reception, 1M+ users — 10.2023 – 07.2025
-The backend for a mobile fax application, featuring secure fax transmission/reception and automated virtual number procurement.
 
-**Stack:** TypeScript, Node, Koa, Mocha, PostgreSQL, BullMQ, Redis, AWS, Docker, Postman
+**Key accomplishments**
+
+- Owned the backend and the infrastructure, from vendor integrations to production support, and set the direction for the mobile developers building against it.
+- Took over a delivery path that failed on 10–20% of transmissions and brought the failure rate down to 5–10% within six months.
+- Traced the causes across infrastructure, the database, and a long tail of defects; the unattended service restarts and application hangs stopped altogether.
+- Reworked the pipeline behind the dead analytics — only then did the failures become traceable.
+- Built fax reception end to end, including automated procurement of virtual numbers from the vendor.
+
+**Stack:** TypeScript, Node.js, Koa, PostgreSQL, BullMQ, Redis, Prometheus, Grafana, AWS, Docker, Mocha
 
 ### Lead Software Engineer with multi-project focus — [Exadel](https://exadel.com/)
-**09.2010 – 07.2023**
+**06.2013 – 07.2023**
 
-#### Project: Inter-service communication platform — 5.2019 – 07.2023
-An SDK platform for cross-service communication. The purpose is to unify the API of internal long living RESTful services within the large department. Used by numerous product teams.
+**Key accomplishments**
 
-**Key accomplishments:**
+- Mentored developers; all of them went on to senior roles, with one-on-one coaching running up to two years.
+- Taught web application engineering at the Belarusian State University for two years on behalf of Exadel.
+- Co-developed and rolled out the engineering grading system for a 1000+ person company — technical level assessment and career paths.
+- Trained numerous engineers to ran the technical interviews.
 
-- Single handedly implemented the OData protocol SDK (SQL-like query language, both client and server) and a framework on top of it, including parsing, interpretation, (de)serialization, to name a few.
-- Optimized and polished the OData pipeline architecture, achieving performance parity with native .NET and Java implementations for large-scale data processing.
+#### Project: Inter-service communication platform — 05.2019 – 07.2023
+An SDK platform unifying the API of internal long-lived RESTful services across the department.
 
-**Stack:** TypeScript, Node, Nest, Mocha, GraphQL, Docker, AWS, Postman, Fiddler, Maven, Jenkins, Jira
+**Key accomplishments**
 
-#### Project: An edge-service and microservice communication engine — 5.2018 – 07.2023
-A micro-platform for rapid API building for easy backend/frontend/microservices integration, etc. Used by numerous product teams.
+- Owned the TypeScript/Node side of the platform SDK in a multi-stack team of six.
+- Implemented the server-side OData SDK — parsing/interpretation/(de)serialization of a SQL-like query language.
+- Built a server-side framework for the SDK to run against
+- Optimized the SDK to performance parity with the .NET and Java implementations.
+- Revamped the client library: restored it to working order, added OData 4, and gave it a query-builder DSL.
+- For the sake of TDD wrote a matcher DSL library for partial expectations — making the growing suite readable.
 
-**Key accomplishments:** e2e design and implementation of the framework.
+**Stack:** TypeScript, Node.js, NestJS, Mocha, Apache Benchmark, GraphQL, Docker, AWS, Java, .NET
 
-**Stack:** TypeScript, Express, Node, Mocha, Docker, GraphQL, AWS, RabbitMQ, Postman, Fiddler, Atlassian CI, Jira
+#### Project: An edge-service and microservice communication engine — 05.2018 – 07.2023
+A micro-platform for rapid API building across backend, frontend, and microservices.
 
-#### Project: Generic search-based software application — 01.2018 – 05.2019
-Generic search-based application. The purpose of the application is to facilitate the easy creation of large-scale corporate websites.
+**Key accomplishments**
 
-**Responsibilities included:** Meetings; Workshops; Problem-solving and troubleshooting; Platform API design and implementation; Business logic implementation; E2E architecture, bootstrapping, guide, and monitoring; Code review; Unit testing; Integration testing; E2E testing.
+- Owned the framework from version 1.11 to 6.x: designed and implemented it end to end.
+- Drove the direction the consuming teams needed: BFF and microservice support, instrumentation, call tracing.
+- Carried the consuming teams through adoption and hardened the framework with every finding.
+- Developed under TDD, with a test suite extensive enough to keep the major-version upgrades safe.
 
-**Stack:** Angular, Redux, TypeScript, NodeJS, Express, Web Components, Cypress, JSX, HTTP, Git, Jira, Atlassian CI, Docker
+**Stack:** TypeScript, Express, Node.js, Mocha, Docker, GraphQL, AWS
+
+#### Project: Generic search-based reference application — 01.2018 – 05.2019
+The blueprint product teams started large corporate websites from.
+
+**Key accomplishments**
+
+- Redesigned the search module at the core of the application, built on the company's in-house search engine.
+- Worked out how the platform should be tested, then migrated the existing suites to Cypress.
+- Built the tracing through the platform, which made request flows diagnosable.
+
+**Stack:** Angular, Redux, TypeScript, Node.js, Express, Web Components, Cypress, Docker
 
 #### Project: Reader application for the worldwide publisher — 06.2013 – 12.2017
-The multi-platform (Android, iOS, MacOS, Windows) reader application integrated into the Customer's ecosystem. The main clientele of this application were lawyers of all kinds.
+The multi-platform (Android, iOS, macOS, Windows) reader application integrated into the customer's ecosystem. Its users were lawyers.
 
-**Key accomplishments:**
+**Key accomplishments**
 
-- Design and implementation of complicated components — cross-platform api, full-text search, http client, epub conversion and instrumentation, background task scheduler, persistence layer, diagnostic, etc.
-- Optimized core processing for a proprietary book format, enabling seamless rendering of ultra-large files that previously caused most of native reading applications to crash.
+- Owned the hardest modules: cross-platform API, full-text search, background processing, persistence.
+- Optimized core processing for a proprietary book format, rendering ultra-large files that crashed most readers.
+- Co-authored the application automation model, which let developers write plugin-like modules, e.g. renting.
 
-**Responsibilities included:** Meetings; Problem solving and troubleshooting; Requirements analysis; Code review; Mentoring and coaching; Cross-platform layer design and maintenance.
-
-**Stack:** Angular, TypeScript, WebSQL, Cordova, NW.io, Node.js, HTTP, Git, Jira
-
-### Senior Software Developer — NDA company
-**01.2008 – 01.2009**
-
-#### Project: Warehouse automation software
-A warehouse application and the offline trading assistant for the automotive dealer. This application enabled managers to easily place orders, reserve commodities, and manage returns and transfers.
-
-**Stack:** .Net, MS SQL Server, MS Access
+**Stack:** Angular, TypeScript, WebSQL, Cordova, NW.js, Node.js
 
 ### Senior Software Developer — [VPI Systems Inc.](http://www.vpisystems.com/)
-**02.2001 – 07.2011**
+**02.2001 – 05.2013**
 
-#### Projects: VPI OnePlan Transport™, VPI Network Optimizer™, VPI Network Configurator™, VPI TransportMaker™, VPI ServiceMaker™
+#### OnePlan Transport™, Network Optimizer™, Network Configurator™, TransportMaker™, ServiceMaker™
 The set of CAD-like software solutions for design, dimensioning, optimizing, planning of optical networks.
 
-**Key accomplishments:**
+**Selected accomplishments over the twelve years**
+- Designed the application, domain, automation model and architecture behind them.
+- Redesigned the network editor and 2D visualization to add analytic capabilities.
+- Optimized the application for large-scale models: 10x less memory and CPU.
 
-- Design and implementation of Network editor and visualization (2D rendering); Analysis: what-if, hierarchical, routing; Import/export, reporting and persistence API redesign; Domain and application model design; Internal DSL implementation.
-- Optimized model architecture and runtime memory efficiency, achieving a 10x reduction in memory footprint and CPU consumption for large-scale models and complex computations.
-
-**Responsibilities included:** Design, implementation, performance tuning, prototyping; TDD, unit testing, refactoring; resurrection of the legacy codebase.
-
-**Stack:** .Net 1.0-3.5, Linq, MS Test, nUnit, DevExpress, GDI+, XML, Redgate ANTS Profiler, JetBrains dotTrace, MS VS, SSCli, Reflector
+**Stack:** .NET 1.0–3.5, LINQ, NUnit, GDI+, DevExpress
 
 ## Education
 
-**MC CS: Belarusian State University of Informatics and Radioelectronics**, Minsk, Belarus — 2002
-
-## Recommendations from my colleagues
-
-**[Olga Belaya](https://www.linkedin.com/in/belayaolga) — Human Resources Director, HR Consultant**
-It was a great pleasure working with Pavel on this huge project of developing and implementing a grading system at Exadel (1000+ employees). Pavel's experience and wide technical outlook helped us to create and evolve the approach to evaluating technical level and creating development plan and clear career path for employees.
-
-**[Alexey Nesteruk](https://www.linkedin.com/in/anesteruk) — Delivery Manager at Exadel**
-As both my mentor and teammate on the same project, Pavel's dedication and expertise have left a lasting impact on both the project's success and my professional growth. Patient, approachable, and always willing to share knowledge, he fostered a collaborative environment where ideas flourished, and learning was encouraged. His mentorship not only enhanced my coding abilities but also instilled a sense of confidence and a passion for continuous improvement.
-
-**[Olga Chikvina](https://www.linkedin.com/in/olga-chikvina-88652033) — Front-end developer at Exadel**
-Pavel has a professional approach and strong opinion on how the things should be implemented and always can justify it. I learnt a lot from Pavel when we were in one team as he's always glad to help, share knowledge, teach and at the same time open to new things to learn.
-
-**[Siarhei Aksiuchenka](https://www.linkedin.com/in/siarhei-aksiuchenka-19aa6067) — Lead Product Software Engineer at Wolters Kluwer**
-I worked along with Pavel for many years on different jobs. He is a truly highly skilled Engineer. Pavel would easily crack any hard-to-solve problem. I've seen it countless times. If you are considering him to fill a position, don't wait. Hire sooner than later while Pavel didn't accept someone else's offer.
-
-**[Jan Arend Jansen](https://www.linkedin.com/in/janarend) — Director of Architecture and Engineering at Wolters Kluwer**
-Pavel has been a pleasure to work with. On my project he has single handedly developed an Api development sdk for Javascript matching functionality with existing sdks for Java and dotnet. He is a great guy, who cares for the results he produces and is helpful to others. He works well alone and in a team. I highly recommend Pavel.
-
-**[Przemysław Pankowski](https://www.linkedin.com/in/przemys%C5%82aw-pankowski-profile) — Software Engineer at ArdentCode**
-Pavel is a true professional and a man of dedication. His experience in building tools and frameworks, which also requires a good understanding of what your users are up to, makes him a valuable asset for any team.
-
-**[Andrey Borozdin](https://www.linkedin.com/in/andreyborozdin) — Software Development Manager at Exadel**
-Pavel is an expert in object-oriented design and application architecture, and he was always ready to share his knowledge and insights with other developers on our team. Pavel is not only a great developer, but also a great mentor and leader. He has a positive attitude, a strong work ethic, and a passion for excellence. He is extremely valuable to any team and I highly recommend him.
-
-**[Siarhei Astapovich](https://www.linkedin.com/in/sastapovich) — Lead Application & Product Architect at Wolters Kluwer**
-One of Pavel's standout attributes is his ability to mentor and guide others. He goes above and beyond to share his knowledge generously with team members, fostering a culture of continuous learning and growth within the organization. His approachable demeanor and patience make him an approachable mentor for colleagues of all experience levels.
+**Engineer's degree in Computer Science: Belarusian State University of Informatics and Radioelectronics**, Minsk, Belarus — 2002
