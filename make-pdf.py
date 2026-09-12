@@ -15,9 +15,9 @@ import tempfile
 from pathlib import Path
 
 PAGE_SIZE = "A4"
-PAGE_MARGIN = "10mm 16mm"
-BASE_PT = 9.6
-LEADING = 1.34
+PAGE_MARGIN = "8mm 16mm"
+BASE_PT = 9
+LEADING = 1.3
 
 CSS = f"""
 @page {{ size: {PAGE_SIZE}; margin: {PAGE_MARGIN}; }}
@@ -124,7 +124,7 @@ def convert(md):
                 cls = "contact"
             elif text.startswith("<strong>Stack:</strong>"):
                 cls = "stack"
-            elif body and body[-1].startswith("<h1"):
+            elif not any(x.startswith("<h2") for x in body) and text.startswith("<strong>"):
                 cls = "tagline"
             else:
                 cls = None
