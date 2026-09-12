@@ -1,0 +1,289 @@
+# CV fix plan
+
+План правок `cv.md` по подозрительным местам — тем, что отпугивают рекрутёра, ломаются в ATS или вызывают недоверие у нанимающего менеджера. Составлен 12.09.2026 по ревью текущей версии.
+
+Порядок — по отдаче на единицу усилий. P1 меняет то, что читают первым; P5 — гигиена.
+
+Легенда: **[текст]** — правка, которую можно внести сразу; **[факт]** — нужен ответ от тебя, без него не пишется.
+
+---
+
+## P0. Из аудита рекрутёра — что ещё не закрыто
+
+Источник: `Recruiter feedback.md`, раздел 3. Галочки в том документе означают согласие с пунктом, а не выполнение: все восемь приняты. В `cv.md` на 12.09.2026 внесено четыре из них.
+
+**Закрыто:** рекомендации убраны; дата окончания Exadel стоит (`07.2023`); общий блок Key Accomplishments распределён по проектам; ранний опыт сжат (VPI — четыре пункта на двенадцать лет).
+
+### 0.1 Заголовок с названием позиции — не сделано **[решение]**
+
+Строка 5 по-прежнему занята фразой про attitude. Рекрутёр предлагает свой вариант:
+
+```
+Senior Software Engineer | Backend (TypeScript/Node.js)
+20+ Years in Enterprise Application Development | Architecture, Infrastructure & Technical Coordination
+```
+
+Расхождение с P1.1: там предложен `Lead Backend Engineer`. Выбор твой и он содержательный — `Senior` шире по числу вакансий и не вызывает вопроса «кем руководил», `Lead` точнее отражает систему грейдов, подготовку интервьюеров и техническое направление для мобильных команд. Второй строкой в любом случае идут архитектура, инфраструктура и техническая координация — формула из раздела 2 аудита, которой в резюме сейчас нет вообще.
+
+### 0.2 Убрать общие фразы — не сделано **[текст]**
+
+Рекрутёр называет две; в файле их три:
+
+- строка 5 — `My attitude is the strongest of my skills!`
+- строка 12 — `Good understanding and horizon in Computer Science`
+- строка 10 — `Strong understanding of software design and principles, architecture` (та же болезнь: прилагательное без события)
+
+На их место — то, что рекрутёр формулирует как продаваемое: инициирую технические обсуждения, фиксирую решения, согласовываю зоны ответственности, довожу сложную задачу от исследования до реализации. Все три утверждения у тебя подтверждены фактами: спецификации и Confluence, согласование API с мобильными и продуктом, OData-SDK от исследования спецификации до паритета по производительности.
+
+### 0.3 Professional Summary + Technical Expertise — не сделано **[текст]**
+
+Сейчас `Summary of Qualifications` (5 строк качеств) и `Experience with:` (8 строк инвентаря). Рекрутёр просит два раздела: смысловой и технический, с навыками, отсортированными под целевую позицию. Готовый текст — в P1.2 и P1.3.
+
+### 0.4 Результат в каждом проекте — частично **[факт]**
+
+Схема рекрутёра: проблема → за что отвечал лично → что спроектировал и реализовал → технологии → с кем взаимодействовал и масштаб → результат. Первые пять звеньев закрыты почти везде. Не закрыто последнее:
+
+- **AI education assistant** — ни одного результата: что дал редизайн LLM-пайплайна, чем кончился проект в 03.2026.
+- **Inter-service communication platform** — сколько команд и сервисов на ней жило (`Used by numerous product teams`), что с ней после 07.2023.
+- **Edge-service engine** — то же: `numerous product teams` без числа, судьба после 07.2023.
+- **Reader application** — вышло ли приложение на четыре платформы, что стало с продажами.
+
+### 0.5 Фраза про AI — не сделано **[факт]**
+
+Рекрутёр просит четыре вещи: какие задачи решаются, какими инструментами, как AI встроен в процесс разработки, какой результат. В файле остались `spec-driven and agent-assisted development` в строке практик и `LLM APIs — OpenAI, Anthropic, Gemini` в инвентаре — то есть ровно то, что он просил заменить.
+
+Нужно от тебя: какими агентами работаешь и как именно (спеки, прогон по задачам, ревью агентом), что это дало измеримо (скорость, объём, качество), и подхватила ли это команда. Пет-проект с оркестрацией агентов ты в резюме не хочешь — тогда практика остаётся единственным носителем этой линии, и её надо описать как процесс, а не как ярлык.
+
+### 0.6 Дата окончания в Alpari — решить **[решение]**
+
+Рекрутёр просит поставить дату окончания и по Exadel, и по Alpari. По Exadel сделано. По Alpari стоит `10.2023 – present`, при этом два из трёх проектов закончились (`03.2026`, `07.2025`), а третий помечен `present`. Если контракт заканчивается 10.2026 — ставить дату и, при желании, пометку о сроке. Если работа продолжается — `present` корректен, и тогда пункт рекрутёра просто снят.
+
+### 0.7 Объём — не более двух страниц — не сделано **[текст]**
+
+Сейчас 1683 слова. Плотное одноколоночное резюме держит 600–750 слов на страницу, то есть выходит около трёх. Сокращать примерно на 500 слов, и есть где:
+
+- **Шапка роли AlpariGroup** — шесть помеченных пунктов, из которых `Recovery`, `Testing`, `Infrastructure` пересказывают то, что ниже сказано конкретнее по проектам. Оставить `Scope`, `API ownership`, `Documentation`.
+- **Стек VPI** — одиннадцать названий, включая профилировщики и `.NET Reflector`. Хватит четырёх-пяти.
+- **Reader application** и **search-based reference application** — клиентская работа под backend-заявку; по два пункта на каждый достаточно.
+- **Описания проектов** — вторые предложения вроде `The purpose is to unify the API of internal long-lived RESTful services within the large department` сокращаются вдвое без потери.
+
+---
+
+## P1. Первый экран
+
+Здесь решается судьба резюме: рекрутёр тратит на него секунды, ATS берёт отсюда поля.
+
+### 1.1 Заменить строку про attitude на заголовок **[текст]**
+
+Сейчас (строка 5):
+
+```markdown
+> I am proud of my contribution to all of the projects below. My attitude is the strongest of my skills!
+```
+
+Риск: восклицательный знак и первое лицо на месте профессии; единственное место в документе, которое читается как резюме джуна. Ни функции, ни уровня, ни дифференциатора.
+
+Заменить на:
+
+```markdown
+**Lead Backend Engineer — TypeScript/Node**
+Platforms, SDKs, and API contracts other teams build on · Recovery of broken and abandoned systems
+```
+
+Слово `Lead` держится на фактах документа: система грейдов на 1000+ человек, подготовка интервьюеров, менторство десятилетия, техническое направление для мобильных команд, владение фреймворком от 1.11 до 6.x. Если целишь в IC-вакансии без лид-составляющей — `Senior Backend Engineer`, остальное без изменений.
+
+### 1.2 Сжать саммари с 14 строк до 4–5 утверждений **[текст]**
+
+Сейчас: 6 строк общих качеств + `Experience with:` + 8 строк инвентаря (~40 названий). Диффузия идёт именно отсюда: `Vue.js, Pinia, Angular` отдельной строкой, `C#, Python, C++` рядом с TypeScript, `.NET` в первой строке — читается полиглот-generalist, а не бэкендщик с платформенной специализацией.
+
+Заменить весь блок на:
+
+```markdown
+## Summary
+
+- 25 years in software engineering: 13 in a services company on platforms and frameworks for other
+  engineering teams, 3 as the sole backend engineer of three consumer mobile products (2M+ users total).
+- Build what others depend on — an OData SDK and framework, a microservice communication engine shipped
+  from 1.11 to 6.x, API contracts for Android, iOS, and admin clients, an internal DSL and domain model.
+- Recover broken systems: a product spread over 30 repositories restored to a deployable state, fax
+  delivery failures cut from 10–20% to 5–10%, an abandoned OData client revived.
+- Set engineering standards beyond my own code: co-authored the technical grading system for a 1000+
+  person company, trained the engineers who ran technical interviews, taught web engineering at
+  a university for two years.
+```
+
+`20+ years` → 25: запись начинается с 02.2001, занижать нет причин.
+
+### 1.3 Инструменты — в отдельный Skills по слоям **[текст]**
+
+```markdown
+## Skills
+
+**Backend** TypeScript, Node.js, NestJS, Express, Koa, REST, GraphQL, OData, microservices, SDK and framework design
+**Data** PostgreSQL, MySQL, Redis, DynamoDB, Elasticsearch, SQL
+**Async** BullMQ, NATS, RabbitMQ
+**Cloud and CI/CD** AWS, Docker, GitLab CI/CD, Jenkins, Atlassian CI
+**Observability** Grafana, Prometheus, ELK, tracing
+**Testing** TDD, unit, integration, E2E, Mocha, Cypress
+**AI** OpenAI, Anthropic, Gemini APIs; spec-driven and agent-assisted development
+**Also** C#, .NET, Python, C++, Angular, Vue.js, Pinia
+```
+
+Фронтенд и ранние стеки — в `Also`, последней строкой: они остаются в документе для ATS и для полноты, но перестают конкурировать с бэкендом за внимание.
+
+---
+
+## P2. Правдоподобие и доверие
+
+Здесь живут вопросы, из-за которых сильные факты читаются как преувеличение.
+
+### 2.1 Якорь под «единственный бэкендщик на трёх продуктах» **[факт]**
+
+Строка 32 — самая сильная и самая уязвимая: три живых продукта, 2M+ пользователей, один бэкендщик, три года. Скептик заподозрит преувеличение.
+
+Нужно от тебя: сколько было мобильщиков и QA вокруг; была ли отдельная платформенная или DevOps-команда; примерный размер кодовых баз (для education assistant ты называл 10–20K строк — это как раз объясняет, почему один человек справлялся).
+
+Форма, в которую это встанет:
+
+```markdown
+- **Scope:** Carried the backend and the infrastructure of three mobile products in parallel — two with
+  1M+ users, one with 100K+ — as the sole backend engineer on all three, alongside ⟨N⟩ mobile developers
+  and ⟨N⟩ QA engineers, with no platform or DevOps team behind me.
+```
+
+### 2.2 Объяснить остаточные 5–10% отказов **[факт]**
+
+Строка 71 честна и потому вызывает очевидный вопрос: «то есть каждая десятая-двадцатая отправка всё ещё падает?»
+
+Если остаток лежит на стороне вендора и получателя (занятая линия, неверный номер, отказ приёмника) — это надо сказать прямо, одной вставкой: `the residual failures sit on the carrier and recipient side`. Если часть остатка была своя — сказать, что именно осталось нерешённым и почему (не успел, не приоритизировали, требовало замены вендора).
+
+### 2.3 Одна строка контекста про AlpariGroup **[факт]**
+
+Alpari — известный форекс-брокер. Три консьюмерских мобильных продукта про факсы, звонки и домашние задания под этим именем выглядят нестыковкой, и читатель тратит на неё внимание вместо твоих достижений.
+
+Нужно: чем на самом деле была эта часть бизнеса (портфель мобильных продуктов? отдельное подразделение? продукты по заказу?). Одна строка под заголовком роли снимает вопрос.
+
+### 2.4 Расшифровать NDA-проекты **[текст]**
+
+Три `NDA` подряд читаются как непроверяемый опыт. Названия продуктов раскрывать не нужно, домен — нужно:
+
+```markdown
+#### Project: Call recording and transcription assistant (NDA), consumer mobile, 1M+ users — 10.2023 – present
+#### Project: AI homework assistant (NDA), consumer mobile, 100K+ users — 10.2023 – 03.2026
+#### Project: Fax transmission and reception (NDA), consumer mobile, 1M+ users — 10.2023 – 07.2025
+```
+
+### 2.5 Вернуть side project в хронологию **[текст]**
+
+Блок `Side project: A warehouse automation startup` (01.2008 – 01.2009) стоит между Exadel (2013–2023) и VPI (2001–2013). Обратная хронология сломана, и блок читается либо как пробел в занятости, либо как ошибка вёрстки.
+
+Перенести ниже блока VPI — внутрь периода, к которому он относится по датам.
+
+### 2.6 Сверить даты с LinkedIn **[факт]**
+
+В документе Exadel — `06.2013 – 07.2023`, VPI — `02.2001 – 05.2013`. Рекрутёр открывает LinkedIn параллельно с резюме; расхождение в годах он трактует не как опечатку, а как редактирование биографии. Проверить, что профиль говорит то же самое.
+
+### 2.7 Локация, формат работы, английский **[факт]**
+
+Сейчас единственный географический сигнал — телефон +375. Для международных вакансий отсутствие города, готовности к релокации/remote, разрешения на работу и уровня английского — причина отложить резюме, а не задать вопрос.
+
+Добавить в контактную строку: город и страну, `Remote` или `Open to relocation`, `English — ⟨B2/C1⟩`.
+
+---
+
+## P3. Регистр и формулировки
+
+Документ написан безлично и сухо — и тем заметнее места, где стиль срывается.
+
+### 3.1 Убрать первое лицо и суперлятив из OData-пункта **[текст]**
+
+Сейчас (строка 94):
+
+> Single-handedly implemented the server-side OData protocol SDK — parsing, interpretation, and (de)serialization of the SQL-like query language — and designed the framework built on top of it; **the architecture is mine. OData is a large and intricate specification, and this was the most demanding engineering work of my career.**
+
+`the architecture is mine` читается как защита от невидимого спора, `most demanding of my career` — как непроверяемая самооценка. Факты в пункте сильные и в подпорках не нуждаются.
+
+Заменить на:
+
+```markdown
+- Single-handedly implemented the server-side OData protocol SDK — parsing, interpretation, and
+  (de)serialization of the SQL-like query language — and designed the framework built on top of it.
+  OData is a large and intricate specification; the SDK covers it down to its edge cases.
+```
+
+### 3.2 Заменить идиому на факт **[факт]**
+
+Строка 96: `Revived the abandoned legacy client, brought it back to its former glory, added OData 4, and gave it a new query builder.`
+
+`brought it back to its former glory` — идиома вместо результата. Нужно: что именно было сломано и что стало (не собиралось? не поддерживало версию протокола? никто не мог им пользоваться?).
+
+### 3.3 Выровнять лицо по документу **[текст]**
+
+Строка 83 — `several I coached one-on-one`, строка 94 — `my`. Остальные 60+ пунктов безличные. Привести к безличному:
+
+```markdown
+- Mentored developers on every project of the decade; several went on to senior positions, with
+  one-on-one coaching running as long as two years per person.
+```
+
+`many of them went on to senior positions` заодно ослабить до `several`: чужой карьерный рост — не твой измеримый результат, и осторожная формулировка здесь вызывает больше доверия, чем сильная.
+
+### 3.4 Убрать ссылку резюме на само себя **[текст]**
+
+Строка 34: `Recovered three legacy products to a deployable, stable state; the measured outcomes are in the project sections below.`
+
+Хвост после точки с запятой убрать — резюме не должно комментировать собственное устройство.
+
+### 3.5 Числа вместо `numerous` **[факт]**
+
+Строки 89 и 102: `Used by numerous product teams` — дважды, при том что рядом ты даёшь `among six engineers` и `from version 1.11 to 6.x`. Нужно: сколько команд и сколько сервисов было построено на каждой платформе, хотя бы порядок.
+
+### 3.6 Судьба платформ после 07.2023 **[факт]**
+
+Ни у одной из двух платформ не сказано, что с ними стало: живы, переданы, закрыты. Это первый вопрос любого, кто сам вёл платформу, и его отсутствие читается как «проект кончился вместе с моим уходом».
+
+### 3.7 Единый стиль меток в шапке AlpariGroup **[текст]**
+
+`Scope`, `API ownership`, `Documentation`, `Infrastructure` — один стиль; `System Stabilization & Recovery`, `Testing & Reliability` — остатки прежнего (Title Case + `&`). Привести к первому: `Recovery`, `Testing`.
+
+---
+
+## P4. ATS-версия
+
+Отдельный артефакт, а не замена `cv.md`. Markdown в git — рабочий формат; в ATS уходит другое.
+
+- [ ] Экспорт в **текстовый PDF** (не картинка) и `.docx`; отправлять именно их, а не ссылку на репозиторий — парсер её не откроет.
+- [ ] **Титул отдельной строкой под именем** — многие парсеры берут «current title» оттуда; сейчас там цитата про attitude, и в поле должности уедет она.
+- [ ] **Контакты плоским текстом** — email, телефон, город; markdown-ссылки и разделители `·` при конвертации теряются вместе с содержимым.
+- [ ] **Типографику заменить на ASCII** — `—`, `–`, `·`, `™` в части парсеров превращаются в мусор и склеивают слова.
+- [ ] **Добавить ключевые слова, за которыми уже есть работа:** `REST`, `CI/CD`, `microservices`, `observability`, `SDK`, `unit testing`, `integration testing`, `distributed systems`. Все они закрываются фактами документа — это не накрутка, а починка фильтров.
+- [ ] Проверить результат парсинга через любой резюме-парсер: совпали ли имя, титул, компании, даты.
+
+---
+
+## P5. Гигиена репозитория
+
+- [ ] **Убрать `Pavel Husakouski — Resume Audit.md` из публичного репозитория.** Это разбор твоего же резюме с процентными оценками и разделом «что говорит резюме и что подтверждают доказательства». Если ссылка на репу уйдёт рекрутёру, он прочитает и это.
+
+```bash
+git rm --cached "Pavel Husakouski — Resume Audit.md"
+echo '*Audit*.md' >> .gitignore
+git commit -m "Keep the audit out of the repo" && git push
+```
+
+  Либо сделать репозиторий приватным. История хранит одну ревизию с файлом — если нужно вычистить совсем, перепиши коммит (репа новая, force-push безопасен).
+
+- [ ] Решить судьбу `catalogue.md`: сейчас это предыдущая версия резюме, лежащая рядом с актуальной. Если он нужен как черновик — перенести в подпапку или переименовать так, чтобы его не приняли за вторую версию резюме.
+
+---
+
+## Что нужно от тебя, одним списком
+
+1. Размер команд вокруг тебя в AlpariGroup: мобильщики, QA, была ли платформенная/DevOps-команда.
+2. Из чего состоят остаточные 5–10% отказов факса.
+3. Чем была AlpariGroup в части этих трёх продуктов.
+4. Что было сломано в заброшенном OData-клиенте до тебя.
+5. Сколько команд и сервисов жило на каждой из двух платформ Exadel.
+6. Что стало с платформами после 07.2023.
+7. Город, формат работы, уровень английского.
+8. Совпадают ли даты Exadel и VPI с LinkedIn.
