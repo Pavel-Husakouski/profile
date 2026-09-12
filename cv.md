@@ -25,7 +25,7 @@ Experience with:
 ## Professional Experience
 
 ### Backend Software Engineer with multi-project focus — AlpariGroup
-**10.2023 – 10.2026**
+**10.2023 – present**
 
 **Key accomplishments:**
 
@@ -36,7 +36,7 @@ Experience with:
 - **Testing & Reliability:** Introduced unit, integration, and E2E test suites across the three products; after that only isolated defects reached production.
 - **Infrastructure:** Rebuilt the logging and monitoring of the products, on Grafana and ELK respectively, to make production incidents diagnosable.
 
-#### Project: NDA mobile call recording assistant, 1M+ users — 10.2023 – 10.2026
+#### Project: NDA mobile call recording assistant, 1M+ users — 10.2023 – present
 The backend for a mobile application for call recording and voice-to-text transcription.
 
 **Key accomplishments:**
@@ -76,7 +76,7 @@ The backend for a mobile fax application.
 **Stack:** TypeScript, Node.js, Koa, PostgreSQL, BullMQ, Redis, Prometheus, Grafana, AWS, Docker, Mocha, Postman
 
 ### Lead Software Engineer with multi-project focus — [Exadel](https://exadel.com/)
-**09.2010 – 07.2023**
+**06.2013 – 07.2023**
 
 #### Project: Inter-service communication platform — 05.2019 – 07.2023
 An SDK platform for cross-service communication. The purpose is to unify the API of internal long-lived RESTful services within the large department. Used by numerous product teams.
@@ -127,16 +127,15 @@ The multi-platform (Android, iOS, MacOS, Windows) reader application integrated 
 
 **Stack:** Angular, TypeScript, WebSQL, Cordova, NW.js, Node.js, HTTP, Git, Jira
 
-### Senior Software Developer — NDA automotive dealer
+### Side project: A warehouse automation startup for an automotive dealer
 **01.2008 – 01.2009**
 
-#### Project: Warehouse automation software
-A warehouse automation and offline trading assistant for the automotive dealer.
+An independent startup, taken on as a side project to go deep on databases. The product covered warehouse automation and an offline trading assistant for the dealer's managers.
 
 **Stack:** .NET, MS SQL Server
 
 ### Senior Software Developer — [VPI Systems Inc.](http://www.vpisystems.com/)
-**02.2001 – 07.2011**
+**02.2001 – 05.2013**
 
 #### Projects: VPI OnePlan Transport™, VPI Network Optimizer™, VPI Network Configurator™, VPI TransportMaker™, VPI ServiceMaker™
 The set of CAD-like software solutions for design, dimensioning, optimizing, planning of optical networks.
