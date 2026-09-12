@@ -135,7 +135,7 @@ The multi-platform (Android, iOS, macOS, Windows) reader application integrated 
 #### OnePlan Transport™, Network Optimizer™, Network Configurator™, TransportMaker™, ServiceMaker™
 The set of CAD-like software solutions for design, dimensioning, optimizing, planning of optical networks.
 
-**Selected accomplishments over the twelve years**
+Selected accomplishments over the twelve years:
 - Designed the application, domain, automation model and architecture behind them.
 - Redesigned the network editor and 2D visualization to add analytic capabilities.
 - Optimized the application for large-scale models: 10x less memory and CPU.
