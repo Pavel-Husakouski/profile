@@ -81,7 +81,7 @@ The backend for a mobile fax application.
 **Key accomplishments:**
 
 - Mentored developers on every project of the decade — many of them went on to senior positions, and several I coached one-on-one for as long as two years each.
-- Taught at the Belarusian State University for two years on behalf of Exadel.
+- Taught web application engineering at the Belarusian State University for two years on behalf of Exadel.
 - Co-developed and rolled out the engineering grading system for a 1000+ person company: how technical level was assessed, and how career paths were laid out for the engineers.
 - Trained the engineers who ran the technical interviews.
 
