@@ -47,7 +47,7 @@ The backend for a mobile application for call recording and voice-to-text transc
 - Recovered the missing pieces, realigned the dependencies, and restored the build and deployment of the whole application in about six months.
 - Reworked the registration, purchase, and subscription handling, migrating the purchases to StoreKit 2.
 - Identified several key features that had been missing and drove them to release.
-- Covered the routine maintenance and debugging cases with scripting.
+- Wrote the operational runbook for the product — analytic, troubleshooting, maintenance, and debugging — with a script behind each recurring case.
 
 **Stack:** Microservices, TypeScript, Node.js, Express, Koa, MySQL, BullMQ, Redis, AWS, Docker, Postman
 
