@@ -34,7 +34,7 @@
 - **AI in the workflow:** Integrated AI tooling (Claude Code and GitHub Copilot) into spec-driven development, cutting feature delivery time by ~50%.
 - **Documentation:** Authored the feature, API, and infrastructure documentation (Confluence and PlantUML) used as the reference by QA and the mobile teams.
 - **Testing:** Introduced unit, integration, and E2E test suites; post-deployment defects dropped to isolated edge cases.
-- **Infrastructure:** Rebuilt logging and monitoring infrastructure (Grafana, ELK), making incidents diagnosable; owned everything running on DevOps-provisioned resources.
+- **Infrastructure:** Owned and rebuilt logging and monitoring (Grafana, ELK), making incidents diagnosable.
 
 #### Project: mobile call recording assistant, 1M+ users, Oct 2023 – Present
 The backend for a mobile application for call recording and voice-to-text transcription.
@@ -50,15 +50,16 @@ The backend for a mobile application for call recording and voice-to-text transc
 The backend and admin site for the mobile homework assistant application.
 
 - Owned the backend and the infrastructure, and drove the API for the mobile client and the admin site.
-- Built the request audit trail and the analytics over it, making spend on every paid service traceable to individual users and requests.
+- Built the audit trail and the analytics over it, making spend on every paid service traceable to users and requests.
 - Led the admin site: built its foundation, then reviewed, hardened, and released the frontend developers' work.
 - Redesigned the LLM pipeline: the crashes, the hangs, and the truncated answers stopped.
 
 **Stack:** TypeScript, Node.js, NestJS, OpenAPI, PostgreSQL, Redis, Prometheus, Grafana, AWS, Docker, Mocha, GitLab
 
 #### Project: fax transmission/reception, 1M+ users, Oct 2023 – May 2025
+The backend and infrastructure for a consumer fax application built on three telephony vendors.
 
-- Owned the backend and the infrastructure, from three telephony vendor integrations to production support, and set the direction for the mobile developers building against it.
+- Owned it from the vendor integrations to production support, and set the direction for the mobile developers building against the API.
 - Took over a delivery path that failed on 10–20% of transmissions and brought it down to the 5–10% baseline.
 - Diagnosed and resolved infrastructure instability, database bottlenecks, and defect backlog causing restarts and hangs.
 - Reworked the pipeline behind the dead analytics — only then did the failures become traceable.
@@ -125,5 +126,4 @@ CAD-like software for designing, dimensioning, optimizing, and planning optical 
 
 ## Education
 
-Belarusian State University of Informatics and Radioelectronics, Minsk, Belarus.
-Engineer's degree, Computer Science, 1995 – 2002
+Belarusian State University of Informatics and Radioelectronics. Engineer's degree, Computer Science, 1995 – 2002
