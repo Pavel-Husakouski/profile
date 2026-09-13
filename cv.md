@@ -47,7 +47,7 @@ The backend for a mobile application for call recording and voice-to-text transc
 The backend and admin site for the mobile homework assistant application.
 
 - Owned the backend and the infrastructure, and drove the API for the mobile client and the admin site.
-- Built the request audit trail and the analytics over it — spends to be traceable to the user/request behind it.
+- Built the request audit trail and the analytics over it — spend to be traceable to the users/requests behind them.
 - Led the admin site: built its foundation — monorepo, authentication, backend communication, state management, deployments — then reviewed, hardened, and released the frontend developers' work.
 - Redesigned the LLM pipeline after the initial implementation proved unreliable.
 
@@ -69,14 +69,14 @@ The backend and admin site for the mobile homework assistant application.
 - Mentored software engineers; several reached senior roles, some after two years of one-on-one coaching.
 - Taught web application engineering at the Belarusian State University for two years on behalf of Exadel.
 - Architected and rolled out the grading system, assessment and career paths for a 1000+ person company.
-- Trained numerous engineers to ran the technical interviews.
+- Trained numerous engineers to conduct the technical interviews.
 
 #### Project: Inter-service communication platform — May 2019 – Jul 2023
 An SDK platform unifying the API of internal long-lived RESTful services across the department.
 
-- Owned the TypeScript/Node side of the platform SDK in a multi-stack team of six.
+- Owned the TypeScript/Node side of the platform SDK - 100K+ lines - in a multi-stack team of six.
 - Implemented the server-side OData SDK — parsing/interpretation/(de)serialization of a SQL-like query language.
-- Built a server-side framework for the SDK to run against
+- Built a server-side framework for the SDK to run against.
 - Optimized the SDK to performance parity with the .NET and Java implementations.
 - Revamped the client library: restored it to working order, added OData 4, and gave it a query-builder DSL.
 - For the sake of TDD wrote a matcher DSL library for partial expectations — making the growing suite readable.

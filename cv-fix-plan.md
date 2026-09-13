@@ -9,7 +9,7 @@
 
 ## Где всё сейчас
 
-Сверка с `cv.md` на 13.09.2026 (1183 слова, PDF — две страницы).
+Сверка с `cv.md` на 13.09.2026, вечер (1144 слова, PDF — две страницы).
 
 **Закрыто** (пункты прежних разделов P0–P3, снятые с плана):
 
@@ -28,6 +28,17 @@
 - Объём: 1683 → 1183 слова, две страницы. Требование рекрутёра выполнено, и появился запас
   примерно на 120–150 слов — его тратим на результаты из шага 3, а не на новые описания.
 - Side project (склад, 2008–2009) убран из документа целиком — вопрос обратной хронологии снят.
+
+**Сделано после пересборки плана** (правки по одной строке, 13.09.2026):
+
+- Строка 30 — документация: вернулись `Confluence`, `PlantUML` и «всех трёх продуктов».
+- Строки 38–39 — `Inherited a product in 30 repositories` вместо `Took over…`; срок «шесть месяцев» убран.
+- Строки 59–60 — restarts/hangs сжаты до одной фразы с причиной и результатом; `within six months`
+  убран и здесь.
+- Строка 69 — `all of them went on to senior roles` → `several reached senior roles, some after two
+  years of one-on-one coaching`. Пункт 1.4 в этой части закрыт.
+- Строка 106 — описание reader'а: аудитория вперёд, висящее `Its users were lawyers.` убрано.
+- Строка 50 — начата переделка под аудит расходов, но осталась сломанной грамматика (см. 1.4).
 
 **Потеряно при сокращении** — вернуть вместе с фактами на шаге 3:
 
@@ -99,13 +110,28 @@ distributed systems, SDK and framework design
 
 ### 1.4 Три формулировки, ослабить или починить **[текст]**
 
-- Строка 72: `Trained numerous engineers to ran the technical interviews` — грамматическая ошибка
-  (`to ran`) и `numerous` без числа. → `Trained the engineers who ran the technical interviews.`
-- Строка 69: `Mentored developers; all of them went on to senior roles` — `all of them` читается
-  как преувеличение и приписывает тебе чужой карьерный рост. → `several went on to senior roles`.
-- Строка 31: `after that only isolated defects reached production` — абсолютное утверждение без
-  базы. → `after that regressions stopped reaching production` или дать число (см. шаг 2).
-- Строка 79: `Built a server-side framework for the SDK to run against` — нет точки в конце.
+- ~~Строка 72: `to ran`~~ — исправлено на `to conduct` 13.09.2026. Осталось `numerous` без числа:
+  → `Trained the engineers who conducted the technical interviews.`
+- ~~Строка 69: `all of them went on to senior roles`~~ — сделано 13.09.2026.
+- Строка 31: `Introduced unit/integration/E2E tests suites` — `tests suites` вместо `test suites`;
+  и `after that only isolated defects reached production` — абсолютное утверждение без базы.
+  → `after that regressions stopped reaching production` или дать число (см. шаг 2).
+- Строка 50: `spends to be traceable to the user/request behind it` — `spends` (неисчисляемое) и
+  сломанная конструкция. → `spend traceable to the user and the request behind it`.
+- ~~Строка 79: нет точки в конце~~ — исправлено 13.09.2026.
+
+### 1.5 Два решения, всплывшие при правках **[решение]**
+
+- **Строка 71:** `Architected and rolled out the grading system` — было `Co-developed`. Если систему
+  делали вдвоём-втроём, `Architected` завышает роль, и это ровно тот случай, когда проверка на
+  интервью стоит дорого. Текст саммари в 1.1 сейчас написан под `co-authored` — выбрать одно.
+- **Строка 77:** `Solely owned the TypeScript/Node side of the huge platform SDK in a multi-stack team
+  of six` — `huge` это прилагательное без события, ровно то, что вычищали из саммари, а `Solely` рядом
+  с `team of six` спотыкает читателя. Факт сильный, ему нужна прямая форма:
+  `Sole TypeScript/Node engineer on the platform SDK, in a multi-stack team of six.`
+- **Сроки.** `in about six months` (восстановление сборки) и `within six months` (факс) убраны оба.
+  Первое — правильно, там срок работал против тебя. Второе стоило оставить: там он подпирал
+  измеримую дельту 10–20% → 5–10%, то есть отвечал на вопрос «за сколько». Вернуть или нет — решить.
 
 **Готово, когда:** `make-pdf.py` собирает две страницы, а в PDF есть разделы с именами
 `Professional Summary` и `Skills`.
