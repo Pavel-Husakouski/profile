@@ -3,21 +3,25 @@
 
 **Senior Software Engineer** — platform SDKs, recovery of legacy systems
 
-## Summary of Qualifications
+## Professional Summary
 
-- 25 years of experience in developing enterprise and consumer applications
-- Spec-driven and agent-assisted development, TDD, code review, refactoring, functional/E2E testing
-- Cross-team collaboration, team coordination, coaching, mentoring
-- English: B2 (Upper-Intermediate)
+- 25 years in software engineering: 10 at a services company building platforms and frameworks for other engineering teams, 3 as the sole backend engineer of three consumer mobile products.
+- Build what others depend on — an OData SDK and framework, a microservice communication engine shipped from 1.11 to 6.x, API contracts for Android, iOS, and admin clients.
+- Recover broken systems: a product spread over 30 repositories restored to a deployable state, fax delivery failures cut from 10–20% to 5–10%, an abandoned OData client revived.
+- Technical coordination without a management title: initiate the design discussions, write the specifications, record the decisions, and settle who owns what across mobile, QA, and product.
+- Set engineering standards beyond my own code: the engineering grading system for a 1000+ person company, the training of the engineers who conducted technical interviews, web engineering taught at a university for two years.
 
-Experience with:
-- Node.js, NestJS, Express, AWS, GraphQL, OData, .NET
-- TypeScript, C#, Python, C++, SQL
-- Vue.js, Pinia, Angular
-- Relational and NoSQL databases — PostgreSQL, MySQL, Redis, DynamoDB
-- Elasticsearch, Grafana, Prometheus, Kibana
-- BullMQ, NATS
-- LLM APIs — OpenAI, Anthropic, Gemini
+## Skills
+
+**Backend** TypeScript, Node.js, NestJS, Express, Koa, REST, GraphQL, OData, microservices, distributed systems, SDK and framework design
+**AI** OpenAI, Anthropic, Gemini APIs; spec-driven and agent-assisted development
+**Data** PostgreSQL, MySQL, Redis, DynamoDB, Elasticsearch, SQL
+**Async** BullMQ, NATS
+**Cloud and CI/CD** AWS, Docker, GitLab CI/CD
+**Observability** Grafana, Prometheus, ELK, Kibana, tracing
+**Testing** TDD, unit testing, integration testing, E2E, Mocha, Cypress
+**Also** C#, .NET, Python, C++, Angular, Vue.js, Pinia
+**Languages** English — B2 (Upper-Intermediate), Russian — Native
 
 ## Professional Experience
 
@@ -26,9 +30,9 @@ Experience with:
 
 - **Scope:** Carried the backend and the infrastructure of three mobile products in parallel — 100K+ to 1M+ users each — as the sole backend engineer on all three.
 - **API ownership:** Designed and negotiated the shape of APIs for Android, iOS, and admin clients.
-- **System Stabilization & Recovery:** Recovered three legacy products to a deployable, stable state.
+- **Recovery:** Recovered three legacy products to a deployable, stable state.
 - **Documentation:** Wrote the feature, API, and infrastructure documentation of all three products in Confluence and PlantUML — the reference for QA and the mobile teams.
-- **Testing & Reliability:** Introduced unit/integration/E2E tests suites; after that only isolated defects reached production.
+- **Testing:** Introduced unit, integration, and E2E test suites; after that only isolated defects reached production.
 - **Infrastructure:** Rebuilt logging and monitoring on Grafana and ELK, which made incidents diagnosable.
 
 #### Project: NDA mobile call recording assistant, 1M+ users — Oct 2023 – Present
@@ -47,7 +51,7 @@ The backend for a mobile application for call recording and voice-to-text transc
 The backend and admin site for the mobile homework assistant application.
 
 - Owned the backend and the infrastructure, and drove the API for the mobile client and the admin site.
-- Built the request audit trail and the analytics over it — spend to be traceable to the users/requests behind them.
+- Built the request audit trail and the analytics over it — spend traceable to the users and requests behind them.
 - Led the admin site: built its foundation — monorepo, authentication, backend communication, state management, deployments — then reviewed, hardened, and released the frontend developers' work.
 - Redesigned the LLM pipeline after the initial implementation proved unreliable.
 
@@ -69,7 +73,7 @@ The backend and admin site for the mobile homework assistant application.
 - Mentored software engineers; several reached senior roles, some after two years of one-on-one coaching.
 - Taught web application engineering at the Belarusian State University for two years on behalf of Exadel.
 - Architected the engineering grading system, assessment and career paths for a 1000+ person company.
-- Trained numerous engineers to conduct the technical interviews.
+- Trained the engineers who conducted the technical interviews.
 
 #### Project: Inter-service communication platform — May 2019 – Jul 2023
 An SDK platform unifying the API of internal long-lived RESTful services across the department.
