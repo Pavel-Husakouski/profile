@@ -37,7 +37,7 @@
 - **Testing:** Introduced unit, integration, and E2E test suites; after that only isolated defects reached production.
 - **Infrastructure:** Rebuilt logging and monitoring on Grafana and ELK, which made incidents diagnosable; DevOps provisioned the resources, everything running on them was backend work.
 
-#### Project: NDA mobile call recording assistant, 1M+ users — Oct 2023 – Present
+#### Project: mobile call recording assistant, 1M+ users — Oct 2023 – Present
 The backend for a mobile application for call recording and voice-to-text transcription.
 
 - Inherited a product in 30 repositories, with code missing from version control and package versions out of sync.
@@ -48,7 +48,7 @@ The backend for a mobile application for call recording and voice-to-text transc
 
 **Stack:** Microservices, TypeScript, Node.js, Express, Koa, MySQL, BullMQ, Redis, NDA vendors, AWS, Docker
 
-#### Project: NDA AI education assistant, 100K+ users — Oct 2023 – Mar 2026
+#### Project: AI education assistant, 100K+ users — Oct 2023 – Mar 2026
 The backend and admin site for the mobile homework assistant application.
 
 - Owned the backend and the infrastructure, and drove the API for the mobile client and the admin site.
@@ -58,7 +58,7 @@ The backend and admin site for the mobile homework assistant application.
 
 **Stack:** TypeScript, Node.js, NestJS, OpenAPI, PostgreSQL, Redis, Prometheus, Grafana, AWS, Docker, Mocha, GitLab
 
-#### Project: NDA fax transmission/reception, 1M+ users — Oct 2023 – Jul 2025
+#### Project: fax transmission/reception, 1M+ users — Oct 2023 – May 2025
 
 - Owned the backend and the infrastructure, from three telephony vendor integrations to production support, and set the direction for the mobile developers building against it.
 - Took over a delivery path that failed on 10–20% of transmissions and brought it down to the 5–10% baseline.
@@ -69,7 +69,7 @@ The backend and admin site for the mobile homework assistant application.
 **Stack:** TypeScript, Node.js, Koa, PostgreSQL, BullMQ, Redis, NDA vendors, Prometheus, Grafana, AWS, Docker, Mocha
 
 ### Lead Software Engineer — [Exadel](https://exadel.com/)
-**Jun 2013 – Jul 2023**
+**Jun 2013 – Aug 2023**
 
 - Mentored software engineers; several reached senior roles, some after two years of one-on-one coaching.
 - Taught web application engineering at the Belarusian State University for two years on behalf of Exadel.
@@ -89,7 +89,7 @@ An SDK platform unifying the API of long-lived RESTful services across the depar
 
 **Stack:** TypeScript, Node.js, NestJS, Mocha, Apache Benchmark, GraphQL, Docker, AWS, Java, .NET
 
-#### Project: An edge-service and microservice communication engine — May 2018 – Jul 2023
+#### Project: An edge-service and microservice communication engine — May 2018 – Jun 2023
 A micro-platform for rapid API building across backend, frontend, and microservices.
 
 - Owned the framework from version 1.11 to 6.x: designed and implemented it end to end.
@@ -107,7 +107,7 @@ The blueprint product teams started large corporate websites from.
 
 **Stack:** Angular, Redux, TypeScript, Node.js, Express, Web Components, Cypress, Docker
 
-#### Project: Reader application for the worldwide publisher — Jun 2013 – Dec 2017
+#### Project: Reader application for a worldwide publisher — Jun 2013 – Dec 2017
 A reader for lawyers, shipped on Android, iOS, macOS, and Windows, integrated into the customer's ecosystem.
 
 - Owned the hardest modules: cross-platform API, full-text search, background processing, persistence.
@@ -117,7 +117,7 @@ A reader for lawyers, shipped on Android, iOS, macOS, and Windows, integrated in
 **Stack:** Angular, TypeScript, WebSQL, Cordova, NW.js, Node.js
 
 ### Senior Software Developer — [VPI Systems Inc.](http://www.vpisystems.com/)
-**Feb 2001 – May 2013**
+**Feb 2001 – Feb 2013**
 
 #### OnePlan Transport, Network Optimizer, Network Configurator, TransportMaker, ServiceMaker
 CAD-like software for design, dimensioning, optimization, and planning of optical networks.
