@@ -6,8 +6,8 @@
 ## Professional Summary
 
 - 25 years in software engineering: 10 at a services company building platforms and frameworks for other engineering teams, 3 as the sole backend engineer of three consumer mobile products.
-- Build what others depend on — an OData SDK and framework, a microservice communication engine shipped from 1.11 to 6.x, API contracts for Android, iOS, and admin clients.
-- Recover broken systems: a product spread across 30 repositories restored to a deployable state, fax delivery failures cut from 10–20% to 5–10%, an abandoned OData client revived.
+- Build what others depend on: an OData SDK and framework, a microservice communication engine shipped from 1.11 to 6.x, API contracts for Android, iOS, and admin clients.
+- Recover broken systems: restored a product spread across 30 repositories to a deployable state, cut fax delivery failures from 10–20% to 5–10%, revived an abandoned OData client.
 - Technical coordination without a management title: specifications, recorded decisions, and settled ownership across mobile, QA, and product.
 - Set engineering standards beyond my own code: the grading system for a 1000+ person company, interviewer training, two years of university teaching.
 
@@ -31,16 +31,15 @@
 - **Scope:** Carried the backend and the infrastructure of three mobile products in parallel — 100K+ to 1M+ users each, tens of thousands of lines each — as the sole backend engineer for five mobile developers and up to three QA.
 - **API ownership:** Designed and negotiated the shape of APIs for Android, iOS, and admin clients.
 - **Recovery:** Recovered three legacy products to a deployable, stable state.
-- **AI in the workflow:** Integrated AI tooling (Claude Code and GitHub Copilot) into spec-driven development reducing feature delivery by ~50%.
+- **AI in the workflow:** Integrated AI tooling (Claude Code and GitHub Copilot) into spec-driven development, cutting feature delivery time by ~50%.
 - **Documentation:** Authored the feature, API, and infrastructure documentation (Confluence and PlantUML) used as the reference by QA and the mobile teams.
 - **Testing:** Introduced unit, integration, and E2E test suites; post-deployment defects dropped to isolated edge cases.
-- **Infrastructure:** * Rebuilt logging and monitoring infrastructure (Grafana, ELK), making incidents diagnosable; owned everything running on DevOps-provisioned resources.
+- **Infrastructure:** Rebuilt logging and monitoring infrastructure (Grafana, ELK), making incidents diagnosable; owned everything running on DevOps-provisioned resources.
 
 #### Project: mobile call recording assistant, 1M+ users, Oct 2023 – Present
 The backend for a mobile application for call recording and voice-to-text transcription.
 
-- Inherited a product in 30 repositories, with code missing from version control and package versions out of sync.
-- Recovered the missing pieces, dependencies, and restored the whole build and deployment.
+- Inherited a product fragmented across 30 repositories, with code missing from version control and package versions adrift; reconstructed the missing pieces and restored the build and deployment of the whole application.
 - Reworked the registration, purchase, and subscription handling, migrating the purchases to StoreKit 2.
 - Identified several key features that had been missing and drove them to release.
 - Wrote the operational runbook for recurring cases — troubleshooting, maintenance, analytics.
@@ -51,7 +50,7 @@ The backend for a mobile application for call recording and voice-to-text transc
 The backend and admin site for the mobile homework assistant application.
 
 - Owned the backend and the infrastructure, and drove the API for the mobile client and the admin site.
-- Built the request audit trail and the analytics over it — spend traceable to the users and requests behind them.
+- Built the request audit trail and the analytics over it, making spend on every paid service traceable to individual users and requests.
 - Led the admin site: built its foundation, then reviewed, hardened, and released the frontend developers' work.
 - Redesigned the LLM pipeline: the crashes, the hangs, and the truncated answers stopped.
 
@@ -61,7 +60,7 @@ The backend and admin site for the mobile homework assistant application.
 
 - Owned the backend and the infrastructure, from three telephony vendor integrations to production support, and set the direction for the mobile developers building against it.
 - Took over a delivery path that failed on 10–20% of transmissions and brought it down to the 5–10% baseline.
-- Traced the restarts and hangs to infrastructure, the database, and a long tail of defects, and ended them.
+- Diagnosed and resolved infrastructure instability, database bottlenecks, and defect backlog causing restarts and hangs.
 - Reworked the pipeline behind the dead analytics — only then did the failures become traceable.
 - Built fax reception end-to-end, including automated procurement of virtual numbers from the vendors.
 
@@ -71,19 +70,18 @@ The backend and admin site for the mobile homework assistant application.
 
 - Mentored software engineers; several reached senior roles, some after two years of one-on-one coaching.
 - Taught web application engineering at the Belarusian State University for two years on behalf of Exadel.
-- Architected the engineering grading system, assessment and career paths for a 1000+ person company.
+- Architected the engineering grading system, assessment, and career paths for a 1000+ person company.
 - Trained the engineers who conducted the technical interviews.
 
 #### Project: Inter-service communication platform, May 2019 – Jul 2023
-An SDK platform unifying the API of long-lived RESTful services across the department — dozens of product teams.
+An SDK platform unifying the API of long-lived RESTful services across the department's dozens of product teams.
 
-- Owned the TypeScript/Node side of the platform SDK - 100K+ lines - in a multi-stack team of six.
+- Owned the TypeScript/Node side of the platform SDK — 100K+ lines — in a multi-stack team of six.
 - Implemented the server-side OData SDK — parsing/interpretation/(de)serialization of a SQL-like query language.
 - Built a server-side framework for the SDK to run against.
-- Optimized the SDK to performance parity with the .NET and Java implementations.
-- Revived the abandoned client library: the code generation and the build were broken, the protocol version and the feature set lagged the .NET and Java clients, and the typings had holes.
-- Closed the gap with the other platforms, added OData 4, and a query-builder DSL.
-- For the sake of TDD, wrote a matcher DSL library for partial expectations making the growing suite readable.
+- Optimized the SDK to achieve performance parity with the .NET and Java implementations.
+- Revived the abandoned OData client: fixed the broken code generation and build, brought it to OData 4 and feature parity with the .NET and Java clients, and added a query-builder DSL.
+- Wrote an asymmetric matcher DSL library for partial expectations under TDD, keeping the suite readable as it grew.
 
 **Stack:** TypeScript, Node.js, NestJS, Mocha, Apache Benchmark, GraphQL, Docker, AWS, Java, .NET
 
@@ -91,7 +89,7 @@ An SDK platform unifying the API of long-lived RESTful services across the depar
 A micro-platform for rapid API building across backend, frontend, and microservices.
 
 - Owned the framework from version 1.11 to 6.x: designed and implemented it end-to-end.
-- Drove the direction the consuming teams needed: BFF and microservice support, instrumentation, call tracing.
+- Drove the framework roadmap from what the consuming teams needed: BFF and microservice support, instrumentation, distributed call tracing.
 - Carried dozens of consuming teams through adoption and hardened the framework with every finding.
 - Developed under TDD, with a test suite extensive enough to keep the major-version upgrades safe.
 
@@ -101,7 +99,7 @@ A micro-platform for rapid API building across backend, frontend, and microservi
 The blueprint product teams used to build large corporate websites.
 
 - Redesigned the search module at the core of the application, built on the company's in-house search engine.
-- Built platform-wide tracing making request flows diagnosable.
+- Built platform-wide tracing, making request flows diagnosable.
 
 **Stack:** Angular, Redux, TypeScript, Node.js, Express, Web Components, Cypress, Docker
 
@@ -109,7 +107,7 @@ The blueprint product teams used to build large corporate websites.
 A reader for lawyers, shipped on Android, iOS, macOS, and Windows, integrated into the customer's ecosystem.
 
 - Owned the hardest modules: cross-platform API, full-text search, background processing, persistence.
-- Optimized core processing for a proprietary book format, rendering ultra-large files that crashed most readers.
+- Built the in-house converter for the proprietary book format (SAX/DOM parsing, rendering, optimization), enabling ultra-large files to render where competing readers crashed.
 - Co-authored the application automation model, which let developers write plugin-like modules, e.g., renting.
 
 **Stack:** Angular, TypeScript, WebSQL, Cordova, NW.js, Node.js
@@ -117,7 +115,7 @@ A reader for lawyers, shipped on Android, iOS, macOS, and Windows, integrated in
 ### Senior Software Developer, [VPI Systems Inc.](http://www.vpisystems.com/), **Feb 2001 – Feb 2013**
 
 #### OnePlan Transport, Network Optimizer, Network Configurator, TransportMaker, ServiceMaker
-CAD-like software for designing, dimensioning, optimizing, and planning of optical networks.
+CAD-like software for designing, dimensioning, optimizing, and planning optical networks.
 
 - Designed the application, domain, automation model, and architecture behind them.
 - Redesigned the network editor and 2D visualization to add analytic capabilities.
@@ -127,5 +125,5 @@ CAD-like software for designing, dimensioning, optimizing, and planning of optic
 
 ## Education
 
-**Belarusian State University of Informatics and Radioelectronics,** Minsk, Belarus.
+Belarusian State University of Informatics and Radioelectronics, Minsk, Belarus.
 Engineer's degree, Computer Science, 1995 – 2002
