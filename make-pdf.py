@@ -67,7 +67,8 @@ def inline(text):
     return out
 
 
-DATE_LINE = re.compile(r"\*\*\s*[\d.]{4,7}\s*[–-]\s*(present|[\d.]{4,7})\s*\*\*", re.I)
+DATE = r"(?:[A-Z][a-z]{2} \d{4}|\d{2}\.\d{4})"
+DATE_LINE = re.compile(rf"\*\*\s*{DATE}\s*[–-]\s*(?:present|{DATE})\s*\*\*", re.I)
 LABEL_ONLY = re.compile(r"\*\*[^*]*accomplishments[^*]*:\*\*\s*$", re.I)
 
 
@@ -102,7 +103,7 @@ def convert(md):
             level = len(line) - len(line.lstrip("#"))
             raw_heading = line[level:].strip()
             # "Project: X, 1M+ users - 10.2023 - present" -> title, right-aligned dates
-            tail = re.search(r"\s+[-\u2014]\s+([\d.]{4,7}\s*[\u2013-]\s*(?:present|[\d.]{4,7}))$", raw_heading, re.I)
+            tail = re.search(rf"\s+[-\u2014]\s+({DATE}\s*[\u2013-]\s*(?:present|{DATE}))$", raw_heading, re.I)
             if tail:
                 heading = inline(raw_heading[: tail.start()]) + f'<span class="when">{inline(tail.group(1))}</span>'
             else:

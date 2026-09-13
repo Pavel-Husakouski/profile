@@ -22,7 +22,7 @@ Experience with:
 ## Professional Experience
 
 ### Backend Software Engineer with multi-project focus — AlpariGroup
-**10.2023 – present**
+**Oct 2023 – Present**
 
 - **Scope:** Carried the backend and the infrastructure of three mobile products in parallel — 100K+ to 1M+ users each — as the sole backend engineer on all three.
 - **API ownership:** Designed the APIs the Android, iOS, and admin clients were built against, and negotiated their shape with the mobile teams.
@@ -31,7 +31,7 @@ Experience with:
 - **Testing & Reliability:** Introduced unit, integration, and E2E test suites; after that only isolated defects reached production.
 - **Infrastructure:** Rebuilt logging and monitoring on Grafana and ELK, which made incidents diagnosable.
 
-#### Project: NDA mobile call recording assistant, 1M+ users — 10.2023 – present
+#### Project: NDA mobile call recording assistant, 1M+ users — Oct 2023 – Present
 The backend for a mobile application for call recording and voice-to-text transcription.
 
 - Owned every backend feature from design to release, plus the build, deployment, and production support.
@@ -43,7 +43,7 @@ The backend for a mobile application for call recording and voice-to-text transc
 
 **Stack:** Microservices, TypeScript, Node.js, Express, Koa, MySQL, BullMQ, Redis, AWS, Docker
 
-#### Project: NDA AI education assistant, 100K+ users — 10.2023 – 03.2026
+#### Project: NDA AI education assistant, 100K+ users — Oct 2023 – Mar 2026
 The backend and admin site for the mobile homework assistant application.
 
 - Owned the backend and the infrastructure, and drove the API for the mobile client and the admin site.
@@ -53,7 +53,7 @@ The backend and admin site for the mobile homework assistant application.
 
 **Stack:** TypeScript, Node.js, NestJS, OpenAPI, PostgreSQL, Redis, Prometheus, Grafana, AWS, Docker, Mocha, GitLab
 
-#### Project: NDA fax transmission/reception, 1M+ users — 10.2023 – 07.2025
+#### Project: NDA fax transmission/reception, 1M+ users — Oct 2023 – Jul 2025
 
 - Owned the backend and the infrastructure, from vendor integrations to production support, and set the direction for the mobile developers building against it.
 - Took over a delivery path that failed on 10–20% of transmissions and brought the failure rate down to 5–10% within six months.
@@ -64,14 +64,14 @@ The backend and admin site for the mobile homework assistant application.
 **Stack:** TypeScript, Node.js, Koa, PostgreSQL, BullMQ, Redis, Prometheus, Grafana, AWS, Docker, Mocha
 
 ### Lead Software Engineer with multi-project focus — [Exadel](https://exadel.com/)
-**06.2013 – 07.2023**
+**Jun 2013 – Jul 2023**
 
 - Mentored developers; all of them went on to senior roles, with one-on-one coaching running up to two years.
 - Taught web application engineering at the Belarusian State University for two years on behalf of Exadel.
 - Co-developed and rolled out the engineering grading system for a 1000+ person company — technical level assessment and career paths.
 - Trained numerous engineers to ran the technical interviews.
 
-#### Project: Inter-service communication platform — 05.2019 – 07.2023
+#### Project: Inter-service communication platform — May 2019 – Jul 2023
 An SDK platform unifying the API of internal long-lived RESTful services across the department.
 
 - Owned the TypeScript/Node side of the platform SDK in a multi-stack team of six.
@@ -83,7 +83,7 @@ An SDK platform unifying the API of internal long-lived RESTful services across 
 
 **Stack:** TypeScript, Node.js, NestJS, Mocha, Apache Benchmark, GraphQL, Docker, AWS, Java, .NET
 
-#### Project: An edge-service and microservice communication engine — 05.2018 – 07.2023
+#### Project: An edge-service and microservice communication engine — May 2018 – Jul 2023
 A micro-platform for rapid API building across backend, frontend, and microservices.
 
 - Owned the framework from version 1.11 to 6.x: designed and implemented it end to end.
@@ -93,7 +93,7 @@ A micro-platform for rapid API building across backend, frontend, and microservi
 
 **Stack:** TypeScript, Express, Node.js, Mocha, Docker, GraphQL, AWS
 
-#### Project: Generic search-based reference application — 01.2018 – 05.2019
+#### Project: Generic search-based reference application — Jan 2018 – May 2019
 The blueprint product teams started large corporate websites from.
 
 - Redesigned the search module at the core of the application, built on the company's in-house search engine.
@@ -102,7 +102,7 @@ The blueprint product teams started large corporate websites from.
 
 **Stack:** Angular, Redux, TypeScript, Node.js, Express, Web Components, Cypress, Docker
 
-#### Project: Reader application for the worldwide publisher — 06.2013 – 12.2017
+#### Project: Reader application for the worldwide publisher — Jun 2013 – Dec 2017
 The multi-platform (Android, iOS, macOS, Windows) reader application integrated into the customer's ecosystem. Its users were lawyers.
 
 - Owned the hardest modules: cross-platform API, full-text search, background processing, persistence.
@@ -112,7 +112,7 @@ The multi-platform (Android, iOS, macOS, Windows) reader application integrated 
 **Stack:** Angular, TypeScript, WebSQL, Cordova, NW.js, Node.js
 
 ### Senior Software Developer — [VPI Systems Inc.](http://www.vpisystems.com/)
-**02.2001 – 05.2013**
+**Feb 2001 – May 2013**
 
 #### OnePlan Transport™, Network Optimizer™, Network Configurator™, TransportMaker™, ServiceMaker™
 The set of CAD-like software solutions for design, dimensioning, optimizing, planning of optical networks.
