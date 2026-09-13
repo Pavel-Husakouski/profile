@@ -50,9 +50,9 @@ h1, h2, h3, h4 {{ break-after: avoid; page-break-after: avoid; }}
 p {{ margin: 1.5pt 0 3pt; }}
 .when {{ float: right; font-size: 8.8pt; font-weight: 500; color: #55606f; }}
 h3, h4 {{ overflow: hidden; }}
-ul {{ margin: 2pt 0 4pt; padding-left: 11pt; }}
-li {{ margin: 0 0 2.2pt; break-inside: avoid; page-break-inside: avoid; }}
-li::marker {{ color: #8b95a3; }}
+ul {{ margin: 2pt 0 4pt; padding-left: 0; list-style: none; }}
+li {{ margin: 0 0 2.2pt; padding-left: 7pt; text-indent: -7pt;
+     break-inside: avoid; page-break-inside: avoid; }}
 a {{ color: inherit; text-decoration: none; }}
 strong {{ font-weight: 650; }}
 blockquote {{ margin: 0 0 6pt; color: #55606f; font-style: italic; }}
@@ -132,14 +132,21 @@ def convert(md):
             if not in_list:
                 body.append("<ul>")
                 in_list = True
-            body.append(f"<li>{inline(line[2:])}</li>")
+            # The marker is written as text: a CSS ::marker is drawn past the
+            # text layer, so resume parsers see the bullets as plain paragraphs.
+            body.append(f"<li>- {inline(line[2:])}</li>")
             continue
         close_list()
         if line.startswith("#"):
             level = len(line) - len(line.lstrip("#"))
             raw_heading = line[level:].strip()
             # "Project: X, 1M+ users - 10.2023 - present" -> title, right-aligned dates
-            tail = re.search(rf"\s+[-\u2014]\s+({DATE}\s*[\u2013-]\s*(?:present|{DATE}))$", raw_heading, re.I)
+            # The separator before the date may be a comma or a dash; either way
+            # the date is lifted out of the heading and floated to the right.
+            tail = re.search(
+                rf"\s*[,\u2014-]\s+\*{{0,2}}({DATE}\s*[\u2013-]\s*(?:present|{DATE}))\*{{0,2}}$",
+                raw_heading, re.I,
+            )
             if tail:
                 heading = inline(raw_heading[: tail.start()]) + f'<span class="when">{inline(tail.group(1))}</span>'
             else:

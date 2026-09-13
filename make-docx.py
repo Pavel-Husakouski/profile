@@ -30,7 +30,6 @@ CONTENT_TYPES = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Default Extension="xml" ContentType="application/xml"/>
 <Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>
 <Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/>
-<Override PartName="/word/numbering.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.numbering+xml"/>
 </Types>"""
 
 RELS = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -41,7 +40,6 @@ RELS = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 DOC_RELS = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
 <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>
-<Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/numbering" Target="numbering.xml"/>
 </Relationships>"""
 
 W = 'xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"'
@@ -73,15 +71,6 @@ STYLES = f"""<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <w:pPr><w:ind w:left="360" w:hanging="180"/><w:spacing w:after="40"/></w:pPr></w:style>
 </w:styles>"""
 
-NUMBERING = f"""<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<w:numbering {W}>
-<w:abstractNum w:abstractNumId="0"><w:lvl w:ilvl="0">
-<w:start w:val="1"/><w:numFmt w:val="bullet"/><w:lvlText w:val="&#8226;"/>
-<w:lvlJc w:val="left"/><w:pPr><w:ind w:left="360" w:hanging="180"/></w:pPr>
-</w:lvl></w:abstractNum>
-<w:num w:numId="1"><w:abstractNumId w:val="0"/></w:num>
-</w:numbering>"""
-
 LINK = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 BOLD = re.compile(r"\*\*([^*]+)\*\*")
 CODE = re.compile(r"`([^`]+)`")
@@ -105,13 +94,12 @@ def runs(text):
 
 
 def para(text, style=None, bullet=False):
-    props = ""
-    if style:
-        props += f'<w:pStyle w:val="{style}"/>'
-    if bullet:
-        props += '<w:numPr><w:ilvl w:val="0"/><w:numId w:val="1"/></w:numPr>'
+    """A bullet is written as a literal "- ": Word's own numbering lives in
+    numbering.xml, and a parser that only reads paragraph text sees no marker
+    at all - the same reason make-pdf.py stopped using CSS ::marker."""
+    props = f'<w:pStyle w:val="{style}"/>' if style else ""
     props = f"<w:pPr>{props}</w:pPr>" if props else ""
-    return f"<w:p>{props}{runs(text)}</w:p>"
+    return f"<w:p>{props}{runs('- ' + text if bullet else text)}</w:p>"
 
 
 HEADING_STYLE = {1: "Title", 2: "Heading1", 3: "Heading2", 4: "Heading3"}
@@ -153,7 +141,6 @@ def main():
         z.writestr("_rels/.rels", RELS)
         z.writestr("word/_rels/document.xml.rels", DOC_RELS)
         z.writestr("word/styles.xml", STYLES)
-        z.writestr("word/numbering.xml", NUMBERING)
         z.writestr("word/document.xml", convert(md))
     print(f"{out} written")
 

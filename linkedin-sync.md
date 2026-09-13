@@ -120,7 +120,7 @@ Architecture`, `SDK Development`, `Technical Documentation`, `Mentoring`.
 
 ```
 Belarusian State University of Informatics and Radioelectronics
-Engineer's degree, Computer Science — 2002
+Engineer's degree, Computer Science — 1995 – 2002
 ```
 
 ## 7. Сверить напоследок
