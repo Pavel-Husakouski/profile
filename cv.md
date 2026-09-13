@@ -68,7 +68,7 @@ The backend and admin site for the mobile homework assistant application.
 
 - Mentored software engineers; several reached senior roles, some after two years of one-on-one coaching.
 - Taught web application engineering at the Belarusian State University for two years on behalf of Exadel.
-- Architected and rolled out the grading system, assessment and career paths for a 1000+ person company.
+- Architected the engineering grading system, assessment and career paths for a 1000+ person company.
 - Trained numerous engineers to conduct the technical interviews.
 
 #### Project: Inter-service communication platform — May 2019 – Jul 2023
