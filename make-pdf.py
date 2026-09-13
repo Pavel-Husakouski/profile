@@ -3,6 +3,12 @@
 
 Usage: python3 make-pdf.py [source.md] [output.pdf]
 
+The output is the copy that goes into applicant tracking systems, so the
+typography is folded to ASCII (em dash, en dash, middot, curly quotes,
+trademark) - some parsers turn those characters into mush and glue the
+neighbouring words together - and the contact line shows the raw address and
+URL while staying clickable.
+
 Layout knobs are the CSS constants below: PAGE_MARGIN, BASE_PT, LEADING.
 Shrink BASE_PT by 0.25pt steps to pull the document onto two pages.
 """
@@ -16,15 +22,17 @@ from pathlib import Path
 
 PAGE_SIZE = "A4"
 PAGE_MARGIN = "8mm 16mm"
-BASE_PT = 9
+BASE_PT = 8.7
 LEADING = 1.3
 
-CSS = f"""
-@page {{ size: {PAGE_SIZE}; margin: {PAGE_MARGIN}; }}
+def css(base_pt=BASE_PT, leading=LEADING, page_size=PAGE_SIZE, page_margin=PAGE_MARGIN):
+    """The whole stylesheet; base_pt is the knob that pulls the document onto two pages."""
+    return f"""
+@page {{ size: {page_size}; margin: {page_margin}; }}
 * {{ box-sizing: border-box; }}
 body {{
   font-family: "Noto Sans", "Liberation Sans", Arial, sans-serif;
-  font-size: {BASE_PT}pt; line-height: {LEADING}; color: #14181f;
+  font-size: {base_pt}pt; line-height: {leading}; color: #14181f;
   margin: 0; -webkit-print-color-adjust: exact;
 }}
 h1 {{ font-size: 19pt; margin: 0 0 2pt; font-weight: 650; }}
@@ -51,6 +59,34 @@ blockquote {{ margin: 0 0 6pt; color: #55606f; font-style: italic; }}
 hr {{ border: 0; border-top: 0.6pt solid #d6dce4; margin: 8pt 0; }}
 .stack {{ font-size: 9.2pt; color: #3c4654; }}
 """
+
+ASCII_MAP = {
+    "\u2014": "-", "\u2013": "-", "\u00b7": "|", "\u2122": "",
+    "\u2018": "'", "\u2019": "'", "\u201c": '"', "\u201d": '"',
+    "\u2026": "...", "\u00a0": " ", "\u2212": "-",
+}
+CONTACT_LINK = re.compile(r"\[([^\]]+)\]\((mailto:([^)]+)|https?://[^)]+)\)")
+
+
+def to_ascii(md):
+    """Fold typography to ASCII and flatten the contact line's links."""
+    out = []
+    for line in md.splitlines():
+        if "mailto:" in line:
+            # Keep the links clickable, but show the address itself: a PDF
+            # parser reads the visible text and never sees the href.
+            line = CONTACT_LINK.sub(
+                lambda m: "[{}]({})".format(
+                    m.group(3) or re.sub(r"^https?://(?:www\.)?", "", m.group(2)).rstrip("/"),
+                    m.group(2),
+                ),
+                line,
+            )
+        for src, dst in ASCII_MAP.items():
+            line = line.replace(src, dst)
+        out.append(re.sub(r" {2,}", " ", line))
+    return "\n".join(out)
+
 
 INLINE = (
     (re.compile(r"\[([^\]]+)\]\(([^)]+)\)"), r'<a href="\2">\1</a>'),
@@ -135,16 +171,19 @@ def convert(md):
 
 
 def main():
-    src = Path(sys.argv[1] if len(sys.argv) > 1 else "cv.md")
-    out = Path(sys.argv[2] if len(sys.argv) > 2 else "Pavel Husakouski - CV.pdf")
+    args = sys.argv[1:]
+    src = Path(args[0] if args else "cv.md")
+    out = Path(args[1] if len(args) > 1 else "Pavel Husakouski - CV.pdf")
     chrome = shutil.which("google-chrome-stable") or shutil.which("chromium") or shutil.which("chrome")
     if not chrome:
         sys.exit("no Chrome binary found")
 
+    source = to_ascii(src.read_text(encoding="utf-8"))
+
     page = (
         "<!doctype html><html><head><meta charset='utf-8'>"
-        f"<title>{html.escape(src.stem)}</title><style>{CSS}</style></head>"
-        f"<body>{convert(src.read_text(encoding='utf-8'))}</body></html>"
+        f"<title>{html.escape(src.stem)}</title><style>{css()}</style></head>"
+        f"<body>{convert(source)}</body></html>"
     )
 
     with tempfile.TemporaryDirectory() as tmp:
