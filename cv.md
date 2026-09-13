@@ -25,18 +25,18 @@ Experience with:
 **Oct 2023 – Present**
 
 - **Scope:** Carried the backend and the infrastructure of three mobile products in parallel — 100K+ to 1M+ users each — as the sole backend engineer on all three.
-- **API ownership:** Designed the APIs the Android, iOS, and admin clients were built against, and negotiated their shape with the mobile teams.
+- **API ownership:** Designed and negotiated the shape of APIs for Android, iOS, and admin clients.
 - **System Stabilization & Recovery:** Recovered three legacy products to a deployable, stable state.
-- **Documentation:** Kept the feature, API, and infrastructure documentation of all three products in Confluence, with PlantUML — the reference for QA and the mobile developers.
-- **Testing & Reliability:** Introduced unit, integration, and E2E test suites; after that only isolated defects reached production.
+- **Documentation:** Wrote the feature, API, and infrastructure documentation of all three products in Confluence and PlantUML — the reference for QA and the mobile teams.
+- **Testing & Reliability:** Introduced unit/integration/E2E tests suites; after that only isolated defects reached production.
 - **Infrastructure:** Rebuilt logging and monitoring on Grafana and ELK, which made incidents diagnosable.
 
 #### Project: NDA mobile call recording assistant, 1M+ users — Oct 2023 – Present
 The backend for a mobile application for call recording and voice-to-text transcription.
 
 - Owned every backend feature from design to release, plus the build, deployment, and production support.
-- Took over a product spread over 30 repositories, with parts of it missing from version control and package versions out of sync.
-- Recovered the missing pieces, realigned the dependencies, and restored the build and deployment of the whole application in about six months.
+- Inherited a product in 30 repositories, with code missing from version control and package versions out of sync.
+- Recovered the missing pieces, dependencies, and restored the whole build and deployment.
 - Reworked the registration, purchase, and subscription handling, migrating the purchases to StoreKit 2.
 - Identified several key features that had been missing and drove them to release.
 - Wrote the operational runbook for recurring cases — troubleshooting, maintenance, analytics.
@@ -47,7 +47,7 @@ The backend for a mobile application for call recording and voice-to-text transc
 The backend and admin site for the mobile homework assistant application.
 
 - Owned the backend and the infrastructure, and drove the API for the mobile client and the admin site.
-- Delivered cross-device synchronization of the solution history, an append-only log for spend analysis, and identity and attribution (Apple, Google, AppsFlyer).
+- Built the request audit trail and the analytics over it — spends to be traceable to the user/request behind it.
 - Led the admin site: built its foundation — monorepo, authentication, backend communication, state management, deployments — then reviewed, hardened, and released the frontend developers' work.
 - Redesigned the LLM pipeline after the initial implementation proved unreliable.
 
@@ -56,8 +56,8 @@ The backend and admin site for the mobile homework assistant application.
 #### Project: NDA fax transmission/reception, 1M+ users — Oct 2023 – Jul 2025
 
 - Owned the backend and the infrastructure, from vendor integrations to production support, and set the direction for the mobile developers building against it.
-- Took over a delivery path that failed on 10–20% of transmissions and brought the failure rate down to 5–10% within six months.
-- Traced the causes across infrastructure, the database, and a long tail of defects; the unattended service restarts and application hangs stopped altogether.
+- Took over a delivery path that failed on 10–20% of transmissions and brought the failure rate down to 5–10%.
+- Traced the restarts and hangs to infrastructure, the database, and a long tail of defects, and ended them.
 - Reworked the pipeline behind the dead analytics — only then did the failures become traceable.
 - Built fax reception end to end, including automated procurement of virtual numbers from the vendor.
 
@@ -66,9 +66,9 @@ The backend and admin site for the mobile homework assistant application.
 ### Lead Software Engineer with multi-project focus — [Exadel](https://exadel.com/)
 **Jun 2013 – Jul 2023**
 
-- Mentored developers; all of them went on to senior roles, with one-on-one coaching running up to two years.
+- Mentored software engineers; several reached senior roles, some after two years of one-on-one coaching.
 - Taught web application engineering at the Belarusian State University for two years on behalf of Exadel.
-- Co-developed and rolled out the engineering grading system for a 1000+ person company — technical level assessment and career paths.
+- Architected and rolled out the grading system, assessment and career paths for a 1000+ person company.
 - Trained numerous engineers to ran the technical interviews.
 
 #### Project: Inter-service communication platform — May 2019 – Jul 2023
@@ -103,7 +103,7 @@ The blueprint product teams started large corporate websites from.
 **Stack:** Angular, Redux, TypeScript, Node.js, Express, Web Components, Cypress, Docker
 
 #### Project: Reader application for the worldwide publisher — Jun 2013 – Dec 2017
-The multi-platform (Android, iOS, macOS, Windows) reader application integrated into the customer's ecosystem. Its users were lawyers.
+A four-platform reader for lawyers — Android, iOS, macOS, Windows — integrated into the customer's ecosystem.
 
 - Owned the hardest modules: cross-platform API, full-text search, background processing, persistence.
 - Optimized core processing for a proprietary book format, rendering ultra-large files that crashed most readers.
