@@ -13,16 +13,16 @@
 
 ## Skills
 
-**Backend:** TypeScript, Node.js, NestJS, Express, Koa, REST, GraphQL, OData, microservices, distributed systems, SDK and framework design;
-**AI:** Claude Code, GitHub Copilot, spec-driven development, OpenAI, Anthropic, Gemini APIs;
-**Telephony:** Telnyx, Twilio, Plivo, Documo, SrFax, Nexmo, Avoxi;
-**Data:** PostgreSQL, MySQL, Redis, DynamoDB, Elasticsearch, SQL;
-**Async:** BullMQ, NATS;
-**Cloud and CI/CD:** AWS, Docker, GitLab CI/CD;
-**Observability:** Grafana, Prometheus, ELK, Kibana, tracing;
-**Testing:** TDD, unit testing, integration testing, E2E, Mocha, Cypress;
-**Also:** C#, .NET, Python, C++, Angular, Vue.js, Pinia;
-**Languages:** English — B2 (Upper-Intermediate), Russian — Native;
+- **Backend:** TypeScript, Node.js, NestJS, Express, Koa, REST, GraphQL, OData, microservices, distributed systems, SDK and framework design.
+- **AI:** Claude Code, GitHub Copilot, spec-driven development, OpenAI, Anthropic, Gemini APIs.
+- **Telephony:** Telnyx, Twilio, Plivo, Documo, SrFax, Nexmo, Avoxi.
+- **Data:** PostgreSQL, MySQL, Redis, DynamoDB, Elasticsearch, SQL.
+- **Async:** BullMQ, NATS.
+- **Cloud and CI/CD:** AWS, Docker, GitLab CI/CD.
+- **Observability:** Grafana, Prometheus, ELK, Kibana, tracing.
+- **Testing:** TDD, unit testing, integration testing, E2E, Mocha, Cypress.
+- **Also:** Vue.js, Pinia, Angular, C#, .NET, Python, C++.
+- **Languages:** English — B2 (Upper-Intermediate), Russian — Native.
 
 ## Professional Experience
 
@@ -115,7 +115,7 @@ A reader for lawyers, shipped on Android, iOS, macOS, and Windows, integrated in
 
 ### Senior Software Developer, [VPI Systems Inc.](http://www.vpisystems.com/), **Feb 2001 – Feb 2013**
 
-#### OnePlan Transport, Network Optimizer, Network Configurator, TransportMaker, ServiceMaker
+#### Projects: OnePlan Transport, Network Optimizer, Network Configurator, TransportMaker
 CAD-like software for designing, dimensioning, optimizing, and planning optical networks.
 
 - Designed the application, domain, automation model, and architecture behind them.
