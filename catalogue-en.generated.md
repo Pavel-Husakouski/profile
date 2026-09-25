@@ -12,7 +12,7 @@ Contacts:
 
 Professional Summary:
 
-  - 25 years in IT: 10 building a platform and frameworks for product teams, 3 as the sole backend engineer of three B2C products.
+  - 25 years in IT: 10 building a platform and frameworks for product teams, 3 as the sole backend engineer of 3 products.
   - Build Core-components product teams depends on: an OData SDK and framework, a microservice communication engine shipped from 1.11 to 6.x.
   - Technical coordination without a management title: specifications, recorded decisions, and settled ownership across mobile, QA, and product.
   - Recover broken systems: restored a product spread across 30 repositories to a deployable state, cut fax delivery failures from 10–20% to 5–10%, revived an abandoned OData client.
@@ -40,7 +40,7 @@ Professional Experience:
       - Owned the backend and the infrastructure of three mobile products in parallel — 100K+ to 1M+ users each, tens of thousands of lines each — as the sole backend engineer for five mobile developers and up to three QA.
       - Designed and negotiated the shape of APIs for Android, iOS, and admin clients.
       - Recovered three legacy products to a deployable, stable state.
-      - Integrated AI tooling (Claude Code and GitHub Copilot) using spec-driven development, cutting feature delivery time by ~50%.
+      - Integrated AI tooling, Claude Code & GitHub Copilot & spec-driven development, cutting feature delivery time by ~50%.
       - Maintained the API and infrastructure documentation (Confluence, PlantUML) for QA and the mobile teams.
       - Introduced unit, integration, and E2E test suites; post-deployment defects dropped to isolated edge cases.
       - Made logging and monitoring transparent (Grafana, ELK), so incidents became diagnosable.
@@ -62,12 +62,13 @@ Professional Experience:
       Summary: The backend and admin site for the mobile homework assistant application.
 
       Key accomplishments:
-        - Owned the backend and the infrastructure, and drove the API for the mobile client and the admin site.
-        - Designed the audit log and the analytics over it, making spend on external APIs traceable down to the user and the request.
+        - Owned the backend and the infrastructure, and drove the API for the mobile client.
+        - Evaluated and benchmarked RAG and vector search to guide the architecture choice.
+        - Redesigned the agentic loop (Gemini, OpenAI): the crashes, the hangs, and the truncated answers stopped.
+        - Integrated audit pipeline, enabling precise request- and user-level traceability for external API spend.
         - Led the admin site: built its foundation, then reviewed, hardened, and released the frontend developers' work.
-        - Redesigned the LLM pipeline: the crashes, the hangs, and the truncated answers stopped.
 
-      Stack: TypeScript, Node.js, NestJS, OpenAPI, PostgreSQL, Redis, Prometheus, Grafana, AWS, Docker, Mocha, GitLab
+      Stack: TypeScript, Node.js, NestJS, Gemini, OpenAI, OpenAPI, PostgreSQL, Redis, Prometheus, Grafana, AWS, Docker, Mocha, GitLab
 
     Project: fax transmission/reception, 1M+ users
       Period: Oct 2023 – May 2025
