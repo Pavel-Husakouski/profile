@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Render cv.md to a .docx that applicant tracking systems can read.
+"""Render a CV markdown file to a .docx that applicant tracking systems can read.
 
-Usage: python3 make-docx.py [source.md] [output.docx]
+Usage: python3 make-docx.py <source.md> <output.docx>
 
 The document is deliberately plain: real heading styles so a parser can find
 the sections, plain bullet lists, no columns, no tables, no text boxes. The
@@ -10,7 +10,8 @@ parsers turn em dashes and middots into mush. Links stay plain text: a parser
 reads the text, and nobody reads a .docx by hand - that is what the PDF is for.
 
 No third-party libraries: a .docx is a zip of XML parts, and the handful of
-parts below is all Word needs.
+parts in docx/ next to this script is all Word needs - styles.xml holds the
+typography, the rest is package boilerplate.
 """
 import importlib.util
 import re
@@ -24,52 +25,16 @@ _make_pdf = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_make_pdf)
 to_ascii = _make_pdf.to_ascii
 
-CONTENT_TYPES = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
-<Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
-<Default Extension="xml" ContentType="application/xml"/>
-<Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>
-<Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/>
-</Types>"""
-
-RELS = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
-<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>
-</Relationships>"""
-
-DOC_RELS = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
-<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>
-</Relationships>"""
-
+# The static parts of the package live in docx/ next to this script, one file
+# per entry of the zip; only word/document.xml is generated per run.
+PARTS = Path(__file__).with_name("docx")
+PART_FILES = {
+    "[Content_Types].xml": "content-types.xml",
+    "_rels/.rels": "package.rels.xml",
+    "word/_rels/document.xml.rels": "document.rels.xml",
+    "word/styles.xml": "styles.xml",
+}
 W = 'xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"'
-
-
-def _style(sid, name, size_half_pt, bold, outline=None, space_before=120):
-    outline_xml = f'<w:outlineLvl w:val="{outline}"/>' if outline is not None else ""
-    return (
-        f'<w:style w:type="paragraph" w:styleId="{sid}"><w:name w:val="{name}"/>'
-        f'<w:basedOn w:val="Normal"/><w:qFormat/>'
-        f'<w:pPr><w:spacing w:before="{space_before}" w:after="40"/>{outline_xml}</w:pPr>'
-        f'<w:rPr><w:b w:val="{"1" if bold else "0"}"/><w:sz w:val="{size_half_pt}"/></w:rPr></w:style>'
-    )
-
-
-STYLES = f"""<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<w:styles {W}>
-<w:docDefaults><w:rPrDefault><w:rPr>
-<w:rFonts w:ascii="Calibri" w:hAnsi="Calibri"/><w:sz w:val="20"/>
-</w:rPr></w:rPrDefault></w:docDefaults>
-<w:style w:type="paragraph" w:styleId="Normal" w:default="1"><w:name w:val="Normal"/>
-<w:pPr><w:spacing w:after="60"/></w:pPr></w:style>
-{_style("Title", "Title", 40, True, space_before=0)}
-{_style("Heading1", "heading 1", 26, True, outline=0)}
-{_style("Heading2", "heading 2", 24, True, outline=1)}
-{_style("Heading3", "heading 3", 22, True, outline=2)}
-<w:style w:type="paragraph" w:styleId="ListParagraph"><w:name w:val="List Paragraph"/>
-<w:basedOn w:val="Normal"/><w:qFormat/>
-<w:pPr><w:ind w:left="360" w:hanging="180"/><w:spacing w:after="40"/></w:pPr></w:style>
-</w:styles>"""
 
 LINK = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 BOLD = re.compile(r"\*\*([^*]+)\*\*")
@@ -131,16 +96,15 @@ def convert(md):
 
 def main():
     args = sys.argv[1:]
-    src = Path(args[0] if args else "cv.md")
-    out = Path(args[1] if len(args) > 1 else "Pavel Husakouski - CV.docx")
+    if len(args) < 2:
+        sys.exit("usage: make-docx.py <source.md> <output.docx>")
+    src, out = Path(args[0]), Path(args[1])
 
     md = to_ascii(src.read_text(encoding="utf-8"))
 
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
-        z.writestr("[Content_Types].xml", CONTENT_TYPES)
-        z.writestr("_rels/.rels", RELS)
-        z.writestr("word/_rels/document.xml.rels", DOC_RELS)
-        z.writestr("word/styles.xml", STYLES)
+        for part, source in PART_FILES.items():
+            z.writestr(part, (PARTS / source).read_text(encoding="utf-8"))
         z.writestr("word/document.xml", convert(md))
     print(f"{out} written")
 

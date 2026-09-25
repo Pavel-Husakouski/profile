@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
-"""Render cv.md to a print-ready, ATS-friendly PDF via Chrome headless.
+"""Render a CV markdown file to a print-ready, ATS-friendly PDF via Chrome headless.
 
-Usage: python3 make-pdf.py [source.md] [output.pdf]
+Usage: python3 make-pdf.py <source.md> <output.pdf> [lang]
+
+The language (en by default, ru for cv-ru.md) sets the document language and
+picks the date pattern used to float a heading's date range to the right; the
+Russian resume writes its dates as "окт. 2023 - наст. время", which the English
+pattern does not match.
 
 The output is the copy that goes into applicant tracking systems, so the
 typography is folded to ASCII (em dash, en dash, middot, curly quotes,
@@ -9,8 +14,9 @@ trademark) - some parsers turn those characters into mush and glue the
 neighbouring words together - and the contact line shows the raw address and
 URL while staying clickable.
 
-Layout knobs are the CSS constants below: PAGE_MARGIN, BASE_PT, LEADING.
-Shrink BASE_PT by 0.25pt steps to pull the document onto two pages.
+The stylesheet lives in cv.css next to this script; the layout knobs it leaves
+open are the constants below: PAGE_MARGIN, BASE_PT, LEADING. Shrink BASE_PT by
+0.25pt steps to pull the document onto two pages.
 """
 import html
 import re
@@ -25,40 +31,15 @@ PAGE_MARGIN = "8mm 16mm"
 BASE_PT = 8.7
 LEADING = 1.3
 
+STYLESHEET = Path(__file__).with_name("cv.css")
+
+
 def css(base_pt=BASE_PT, leading=LEADING, page_size=PAGE_SIZE, page_margin=PAGE_MARGIN):
-    """The whole stylesheet; base_pt is the knob that pulls the document onto two pages."""
-    return f"""
-@page {{ size: {page_size}; margin: {page_margin}; }}
-* {{ box-sizing: border-box; }}
-body {{
-  font-family: "Noto Sans", "Liberation Sans", Arial, sans-serif;
-  font-size: {base_pt}pt; line-height: {leading}; color: #14181f;
-  margin: 0; -webkit-print-color-adjust: exact;
-}}
-h1 {{ font-size: 19pt; margin: 0 0 2pt; font-weight: 650; }}
-.tagline {{ font-size: 10.5pt; font-weight: 600; color: #1f2a3a; margin: 0 0 1pt; }}
-.tagline em {{ font-weight: 500; font-style: normal; color: #55606f; }}
-.contact {{ font-size: 8.6pt; color: #55606f; margin: 0 0 9pt; }}
-h2 {{
-  font-size: 9.5pt; text-transform: uppercase; font-weight: 700;
-  color: #1f2a3a; border-bottom: 0.6pt solid #c4ccd6;
-  margin: 10pt 0 4pt; padding-bottom: 1.5pt;
-}}
-h3 {{ font-size: 10.6pt; font-weight: 650; margin: 7pt 0 0; }}
-h4, .project {{ font-size: 9.8pt; font-weight: 650; margin: 5pt 0 0; color: #22303f; }}
-h1, h2, h3, h4, .project {{ break-after: avoid; page-break-after: avoid; }}
-p {{ margin: 1.5pt 0 3pt; }}
-.when {{ float: right; font-size: 8.8pt; font-weight: 500; color: #55606f; }}
-h3, h4, .project {{ overflow: hidden; }}
-ul {{ margin: 2pt 0 4pt; padding-left: 0; list-style: none; }}
-li {{ margin: 0 0 2.2pt; padding-left: 7pt; text-indent: -7pt;
-     break-inside: avoid; page-break-inside: avoid; }}
-a {{ color: inherit; text-decoration: none; }}
-strong {{ font-weight: 650; }}
-blockquote {{ margin: 0 0 6pt; color: #55606f; font-style: italic; }}
-hr {{ border: 0; border-top: 0.6pt solid #d6dce4; margin: 8pt 0; }}
-.stack {{ font-size: 9.2pt; color: #3c4654; }}
-"""
+    """cv.css with the layout knobs filled in."""
+    return STYLESHEET.read_text(encoding="utf-8").format(
+        base_pt=base_pt, leading=leading, page_size=page_size, page_margin=page_margin
+    )
+
 
 ASCII_MAP = {
     "\u2014": "-", "\u2013": "-", "\u00b7": "|", "\u2122": "",
@@ -103,14 +84,39 @@ def inline(text):
     return out
 
 
-DATE = r"(?:[A-Z][a-z]{2} \d{4}|\d{2}\.\d{4})"
-DATE_LINE = re.compile(rf"\*\*\s*{DATE}\s*[–-]\s*(?:present|{DATE})\s*\*\*", re.I)
-LABEL_ONLY = re.compile(r"\*\*[^*]*accomplishments[^*]*:\*\*\s*$", re.I)
+# Month-year shapes per language, plus the "still going" word that ends an
+# open-ended range. Numeric dates (10.2023) are read in either language.
+NUMERIC_DATE = r"\d{2}\.\d{4}"
+RU_MONTH = r"(?:янв|фев|март|апр|май|июн[ья]|июл[ья]|авг|сент|окт|нояб|дек)\.?"
+DATE_BY_LANG = {
+    "en": (rf"(?:[A-Z][a-z]{{2}} \d{{4}}|{NUMERIC_DATE})", "present"),
+    "ru": (rf"(?:(?:{RU_MONTH} )?\d{{4}}|{NUMERIC_DATE})", r"наст\.? время"),
+}
 # a project is a bold line, not a heading: an ATS reads a fourth-level heading
 # unpredictably, a bold line always as text
-PROJECT_LINE = re.compile(r"\*\*(Projects?:.*)\*\*\s*$")
+PROJECT_BY_LANG = {"en": r"Projects?:", "ru": r"Проекты?:"}
+
+DATE, PRESENT = DATE_BY_LANG["en"]
 
 
+def _date_line(date, present):
+    return re.compile(rf"\*\*\s*{date}\s*[–-]\s*(?:{present}|{date})\s*\*\*", re.I)
+
+
+DATE_LINE = _date_line(DATE, PRESENT)
+PROJECT_LINE = re.compile(rf"\*\*({PROJECT_BY_LANG['en']}.*)\*\*\s*$")
+
+
+def set_language(lang):
+    """Switch the date and project patterns to the language of the source."""
+    global DATE, PRESENT, DATE_LINE, PROJECT_LINE
+    DATE, PRESENT = DATE_BY_LANG.get(lang, DATE_BY_LANG["en"])
+    DATE_LINE = _date_line(DATE, PRESENT)
+    label = PROJECT_BY_LANG.get(lang, PROJECT_BY_LANG["en"])
+    PROJECT_LINE = re.compile(rf"\*\*({label}.*)\*\*\s*$")
+
+
+LABEL_ONLY = re.compile(r"\*\*[^*]*accomplishments[^*]*:\*\*\s*$", re.I)
 def convert(md):
     """Markdown to HTML, with two presentation-only compressions:
     a date line following a heading is pulled into that heading, and the
@@ -148,7 +154,7 @@ def convert(md):
             # The separator before the date may be a comma or a dash; either way
             # the date is lifted out of the heading and floated to the right.
             tail = re.search(
-                rf"\s*[,\u2014-]\s+\*{{0,2}}({DATE}\s*[\u2013-]\s*(?:present|{DATE}))\*{{0,2}}$",
+                rf"\s*[,\u2014-]\s+\*{{0,2}}({DATE}\s*[\u2013-]\s*(?:{PRESENT}|{DATE}))\*{{0,2}}$",
                 raw_heading, re.I,
             )
             if tail:
@@ -186,8 +192,11 @@ def convert(md):
 
 def main():
     args = sys.argv[1:]
-    src = Path(args[0] if args else "cv.md")
-    out = Path(args[1] if len(args) > 1 else "Pavel Husakouski - Nodejs-backend-fullstack.pdf")
+    if len(args) < 2:
+        sys.exit("usage: make-pdf.py <source.md> <output.pdf> [lang]")
+    src, out = Path(args[0]), Path(args[1])
+    lang = args[2] if len(args) > 2 else "en"
+    set_language(lang)
     chrome = shutil.which("google-chrome-stable") or shutil.which("chromium") or shutil.which("chrome")
     if not chrome:
         sys.exit("no Chrome binary found")
@@ -195,7 +204,7 @@ def main():
     source = to_ascii(src.read_text(encoding="utf-8"))
 
     page = (
-        "<!doctype html><html><head><meta charset='utf-8'>"
+        f"<!doctype html><html lang='{lang}'><head><meta charset='utf-8'>"
         f"<title>{html.escape(src.stem)}</title><style>{css()}</style></head>"
         f"<body>{convert(source)}</body></html>"
     )
