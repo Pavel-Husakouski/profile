@@ -3,16 +3,19 @@
 Исходники резюме в markdown — `cv-en.md` и `cv-ru.md`. Сборка даёт три артефакта на язык:
 PDF (для людей), DOCX (для ATS) и `catalogue-*.generated.md` (разбор текста по пунктам).
 
-## Установка (Arch / Manjaro)
-
-```sh
-sudo pacman -S just python chromium nodejs npm
-```
-
+## Пререквизиты
 - `just` — раннер сборки;
 - `chromium` — им печатается PDF (`make-pdf.py` возьмёт `google-chrome-stable`, `chromium` или `chrome`);
 - `python` — скрипты сборки, сторонних библиотек не требуют;
 - `nodejs`/`npm` — только для `just watch` (через `npx onchange`).
+
+## Установка (Arch / Manjaro)
+
+```sh
+sudo pacman -S just
+sudo pacman -S nodejs npm
+sudo pacman -S google-chrome-stable
+```
 
 ## Имя и должность
 
