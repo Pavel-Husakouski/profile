@@ -20,16 +20,16 @@ Professional Summary:
 
 Skills:
 
-  Backend: TypeScript, Node.js, NestJS, Express, Koa, REST, GraphQL, OData, microservices, distributed systems, SDK and framework design;
-  AI: Claude Code, GitHub Copilot, spec-driven development, OpenAI, Anthropic, Gemini APIs;
-  Telephony: Telnyx, Twilio, Plivo, Documo, SrFax, Nexmo, Avoxi;
-  Data: PostgreSQL, MySQL, Redis, DynamoDB, Elasticsearch, SQL;
-  Async: BullMQ, NATS;
-  Cloud and CI/CD: AWS, Docker, GitLab CI/CD;
-  Observability: Grafana, Prometheus, ELK, Kibana, tracing;
-  Testing: TDD, unit testing, integration testing, E2E, Mocha, Cypress;
-  Also: C#, .NET, Python, C++, Angular, Vue.js, Pinia;
-  Languages: English — B2 (Upper-Intermediate), Russian — Native;
+  - Backend: TypeScript, Node.js, NestJS, Express, Koa, REST, GraphQL, OData, microservices, distributed systems, SDK and framework design.
+  - AI: Claude Code, GitHub Copilot, spec-driven development, OpenAI, Anthropic, Gemini APIs.
+  - Telephony: Telnyx, Twilio, Plivo, Documo, SrFax, Nexmo, Avoxi.
+  - Data: PostgreSQL, MySQL, Redis, DynamoDB, Elasticsearch, SQL.
+  - Async: BullMQ, NATS.
+  - Cloud and CI/CD: AWS, Docker, GitLab CI/CD.
+  - Observability: Grafana, Prometheus, ELK, Kibana, tracing.
+  - Testing: TDD, unit testing, integration testing, E2E, Mocha, Cypress.
+  - Also: Vue.js, Pinia, Angular, C#, .NET, Python, C++.
+  - Languages: English — B2 (Upper-Intermediate), Russian — Native.
 
 Professional Experience:
 
@@ -37,13 +37,13 @@ Professional Experience:
     Period: Oct 2023 – Present
 
     Key accomplishments:
-      - Scope: Carried the backend and the infrastructure of three mobile products in parallel — 100K+ to 1M+ users each, tens of thousands of lines each — as the sole backend engineer for five mobile developers and up to three QA.
-      - API ownership: Designed and negotiated the shape of APIs for Android, iOS, and admin clients.
-      - Recovery: Recovered three legacy products to a deployable, stable state.
-      - AI in the workflow: Integrated AI tooling (Claude Code and GitHub Copilot) into spec-driven development, cutting feature delivery time by ~50%.
-      - Documentation: Authored the feature, API, and infrastructure documentation (Confluence and PlantUML) used as the reference by QA and the mobile teams.
-      - Testing: Introduced unit, integration, and E2E test suites; post-deployment defects dropped to isolated edge cases.
-      - Infrastructure: Owned and rebuilt logging and monitoring (Grafana, ELK), making incidents diagnosable.
+      - Carried the backend and the infrastructure of three mobile products in parallel — 100K+ to 1M+ users each, tens of thousands of lines each — as the sole backend engineer for five mobile developers and up to three QA.
+      - Designed and negotiated the shape of APIs for Android, iOS, and admin clients.
+      - Recovered three legacy products to a deployable, stable state.
+      - Integrated AI tooling (Claude Code and GitHub Copilot) into spec-driven development, cutting feature delivery time by ~50%.
+      - Authored the feature, API, and infrastructure documentation (Confluence and PlantUML) used as the reference by QA and the mobile teams.
+      - Introduced unit, integration, and E2E test suites; post-deployment defects dropped to isolated edge cases.
+      - Owned and rebuilt logging and monitoring (Grafana, ELK), making incidents diagnosable.
 
     Project: mobile call recording assistant, 1M+ users
       Period: Oct 2023 – Present
@@ -141,7 +141,7 @@ Professional Experience:
   Position: Senior Software Developer, VPI Systems Inc.
     Period: Feb 2001 – Feb 2013
 
-    Project: OnePlan Transport, Network Optimizer, Network Configurator, TransportMaker, ServiceMaker
+    Project: OnePlan Transport, Network Optimizer, Network Configurator, TransportMaker
       Summary: CAD-like software for designing, dimensioning, optimizing, and planning optical networks.
 
       Key accomplishments:

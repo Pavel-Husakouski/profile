@@ -45,11 +45,11 @@ h2 {{
   margin: 10pt 0 4pt; padding-bottom: 1.5pt;
 }}
 h3 {{ font-size: 10.6pt; font-weight: 650; margin: 7pt 0 0; }}
-h4 {{ font-size: 9.8pt; font-weight: 650; margin: 5pt 0 0; color: #22303f; }}
-h1, h2, h3, h4 {{ break-after: avoid; page-break-after: avoid; }}
+h4, .project {{ font-size: 9.8pt; font-weight: 650; margin: 5pt 0 0; color: #22303f; }}
+h1, h2, h3, h4, .project {{ break-after: avoid; page-break-after: avoid; }}
 p {{ margin: 1.5pt 0 3pt; }}
 .when {{ float: right; font-size: 8.8pt; font-weight: 500; color: #55606f; }}
-h3, h4 {{ overflow: hidden; }}
+h3, h4, .project {{ overflow: hidden; }}
 ul {{ margin: 2pt 0 4pt; padding-left: 0; list-style: none; }}
 li {{ margin: 0 0 2.2pt; padding-left: 7pt; text-indent: -7pt;
      break-inside: avoid; page-break-inside: avoid; }}
@@ -106,6 +106,9 @@ def inline(text):
 DATE = r"(?:[A-Z][a-z]{2} \d{4}|\d{2}\.\d{4})"
 DATE_LINE = re.compile(rf"\*\*\s*{DATE}\s*[–-]\s*(?:present|{DATE})\s*\*\*", re.I)
 LABEL_ONLY = re.compile(r"\*\*[^*]*accomplishments[^*]*:\*\*\s*$", re.I)
+# a project is a bold line, not a heading: an ATS reads a fourth-level heading
+# unpredictably, a bold line always as text
+PROJECT_LINE = re.compile(r"\*\*(Projects?:.*)\*\*\s*$")
 
 
 def convert(md):
@@ -137,9 +140,10 @@ def convert(md):
             body.append(f"<li>- {inline(line[2:])}</li>")
             continue
         close_list()
-        if line.startswith("#"):
+        project = PROJECT_LINE.match(line.strip())
+        if line.startswith("#") or project:
             level = len(line) - len(line.lstrip("#"))
-            raw_heading = line[level:].strip()
+            raw_heading = project.group(1) if project else line[level:].strip()
             # "Project: X, 1M+ users - 10.2023 - present" -> title, right-aligned dates
             # The separator before the date may be a comma or a dash; either way
             # the date is lifted out of the heading and floated to the right.
@@ -155,7 +159,10 @@ def convert(md):
             if DATE_LINE.fullmatch(nxt.strip()):
                 heading += f'<span class="when">{inline(nxt.strip())}</span>'
                 i = lines.index(nxt, i) + 1
-            body.append(f"<h{level}>{heading}</h{level}>")
+            body.append(
+                f'<p class="project">{heading}</p>' if project
+                else f"<h{level}>{heading}</h{level}>"
+            )
         elif LABEL_ONLY.match(line):
             continue
         elif line.startswith("> "):
@@ -180,7 +187,7 @@ def convert(md):
 def main():
     args = sys.argv[1:]
     src = Path(args[0] if args else "cv.md")
-    out = Path(args[1] if len(args) > 1 else "Pavel Husakouski - CV.pdf")
+    out = Path(args[1] if len(args) > 1 else "Pavel Husakouski - Nodejs-backend-fullstack.pdf")
     chrome = shutil.which("google-chrome-stable") or shutil.which("chromium") or shutil.which("chrome")
     if not chrome:
         sys.exit("no Chrome binary found")

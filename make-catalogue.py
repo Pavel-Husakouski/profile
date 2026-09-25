@@ -87,6 +87,9 @@ def education_rows(line):
     return rows
 
 
+PROJECT_LINE = re.compile(r"\*\*Projects?:.*\*\*\s*$")
+
+
 def split_heading(heading):
     """Heading text and its trailing date range, both plain."""
     text = plain(heading)
@@ -126,10 +129,11 @@ def render(md):
             if dates:
                 block(f"Period: {dates}", 2)
             depth = 2
-        elif line.startswith("#### "):
-            text, dates = split_heading(line[5:])
-            # cv.md writes "Project: name"; the label is added here
-            block(f"Project: {text.removeprefix('Project:').strip()}", 2)
+        elif PROJECT_LINE.match(line):
+            # a project is written bold rather than as a heading: an ATS reads
+            # a fourth-level heading unpredictably, a bold line always as text
+            text, dates = split_heading(line.strip().strip("*"))
+            block(f"Project: {re.sub(r'^Projects?:', '', text).strip()}", 2)
             if dates:
                 block(f"Period: {dates}", 3)
             depth = 3

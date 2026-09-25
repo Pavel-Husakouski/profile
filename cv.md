@@ -1,7 +1,7 @@
 # Pavel Husakouski
 [phusakouski@gmail.com](mailto:phusakouski@gmail.com) · [LinkedIn](https://www.linkedin.com/in/pavel-husakouski/) · +375(29)133-79-01 · [@Pauelito](https://t.me/Pauelito) · Minsk, Belarus · Office or remote
 
-**Senior Backend Engineer (TypeScript/Node.js)** — platform SDKs, recovery of legacy systems
+**Senior Backend Engineer | Senior Fullstack Engineer (TypeScript/JavaScript/Node.js/Vue)** — platform SDKs, recovery of legacy systems
 
 ## Professional Summary
 
@@ -13,7 +13,7 @@
 
 ## Skills
 
-- **Backend:** TypeScript, Node.js, NestJS, Express, Koa, REST, GraphQL, OData, microservices, distributed systems, SDK and framework design.
+- **Backend:** TypeScript, JavaScript, Node.js, NestJS, Express, Koa, REST, GraphQL, OData, microservices, distributed systems, SDK and framework design.
 - **AI:** Claude Code, GitHub Copilot, spec-driven development, OpenAI, Anthropic, Gemini APIs.
 - **Telephony:** Telnyx, Twilio, Plivo, Documo, SrFax, Nexmo, Avoxi.
 - **Data:** PostgreSQL, MySQL, Redis, DynamoDB, Elasticsearch, SQL.
@@ -21,22 +21,22 @@
 - **Cloud and CI/CD:** AWS, Docker, GitLab CI/CD.
 - **Observability:** Grafana, Prometheus, ELK, Kibana, tracing.
 - **Testing:** TDD, unit testing, integration testing, E2E, Mocha, Cypress.
-- **Also:** Vue.js, Pinia, Angular, C#, .NET, Python, C++.
+- **Also:** Vue.js, Pinia, Angular, C#, .NET, Python, C++, Golang.
 - **Languages:** English — B2 (Upper-Intermediate), Russian — Native.
 
 ## Professional Experience
 
 ### Backend Software Engineer, AlpariGroup, **Oct 2023 – Present**
 
-- **Scope:** Carried the backend and the infrastructure of three mobile products in parallel — 100K+ to 1M+ users each, tens of thousands of lines each — as the sole backend engineer for five mobile developers and up to three QA.
-- **API ownership:** Designed and negotiated the shape of APIs for Android, iOS, and admin clients.
-- **Recovery:** Recovered three legacy products to a deployable, stable state.
-- **AI in the workflow:** Integrated AI tooling (Claude Code and GitHub Copilot) into spec-driven development, cutting feature delivery time by ~50%.
-- **Documentation:** Authored the feature, API, and infrastructure documentation (Confluence and PlantUML) used as the reference by QA and the mobile teams.
-- **Testing:** Introduced unit, integration, and E2E test suites; post-deployment defects dropped to isolated edge cases.
-- **Infrastructure:** Owned and rebuilt logging and monitoring (Grafana, ELK), making incidents diagnosable.
+- Owned the backend and the infrastructure of three mobile products in parallel — 100K+ to 1M+ users each, tens of thousands of lines each — as the sole backend engineer for five mobile developers and up to three QA.
+- Designed and negotiated the shape of APIs for Android, iOS, and admin clients.
+- Recovered three legacy products to a deployable, stable state.
+- Integrated AI tooling (Claude Code and GitHub Copilot) into spec-driven development, cutting feature delivery time by ~50%.
+- Authored the feature, API, and infrastructure documentation (Confluence and PlantUML) used as the reference by QA and the mobile teams.
+- Introduced unit, integration, and E2E test suites; post-deployment defects dropped to isolated edge cases.
+- Rebuilt logging and monitoring (Grafana, ELK), making incidents diagnosable.
 
-#### Project: mobile call recording assistant, 1M+ users, Oct 2023 – Present
+**Project: mobile call recording assistant, 1M+ users, Oct 2023 – Present**
 The backend for a mobile application for call recording and voice-to-text transcription.
 
 - Inherited a product fragmented across 30 repositories, with code missing from version control and package versions adrift; reconstructed the missing pieces and restored the build and deployment of the whole application.
@@ -46,7 +46,7 @@ The backend for a mobile application for call recording and voice-to-text transc
 
 **Stack:** Microservices, TypeScript, Node.js, Express, Koa, MySQL, BullMQ, Redis, NDA vendors, AWS, Docker
 
-#### Project: AI education assistant, 100K+ users, Oct 2023 – Mar 2026
+**Project: AI education assistant, 100K+ users, Oct 2023 – Mar 2026**
 The backend and admin site for the mobile homework assistant application.
 
 - Owned the backend and the infrastructure, and drove the API for the mobile client and the admin site.
@@ -56,7 +56,7 @@ The backend and admin site for the mobile homework assistant application.
 
 **Stack:** TypeScript, Node.js, NestJS, OpenAPI, PostgreSQL, Redis, Prometheus, Grafana, AWS, Docker, Mocha, GitLab
 
-#### Project: fax transmission/reception, 1M+ users, Oct 2023 – May 2025
+**Project: fax transmission/reception, 1M+ users, Oct 2023 – May 2025**
 The backend and infrastructure for a consumer fax application built on three telephony vendors.
 
 - Owned it from the vendor integrations to production support, and set the direction for the mobile developers building against the API.
@@ -74,7 +74,7 @@ The backend and infrastructure for a consumer fax application built on three tel
 - Architected the engineering grading system, assessment, and career paths for a 1000+ person company.
 - Trained the engineers who conducted the technical interviews.
 
-#### Project: Inter-service communication platform, May 2019 – Jul 2023
+**Project: Inter-service communication platform, May 2019 – Jul 2023**
 An SDK platform unifying the API of long-lived RESTful services across the department's dozens of product teams.
 
 - Owned the TypeScript/Node side of the platform SDK — 100K+ lines — in a multi-stack team of six.
@@ -86,7 +86,7 @@ An SDK platform unifying the API of long-lived RESTful services across the depar
 
 **Stack:** TypeScript, Node.js, NestJS, Mocha, Apache Benchmark, GraphQL, Docker, AWS, Java, .NET
 
-#### Project: An edge-service and microservice communication engine, May 2018 – Jun 2023
+**Project: An edge-service and microservice communication engine, May 2018 – Jun 2023**
 A micro-platform for rapid API building across backend, frontend, and microservices.
 
 - Owned the framework from version 1.11 to 6.x: designed and implemented it end-to-end.
@@ -96,7 +96,7 @@ A micro-platform for rapid API building across backend, frontend, and microservi
 
 **Stack:** TypeScript, Express, Node.js, Mocha, Docker, GraphQL, AWS
 
-#### Project: Generic search-based reference application, Jan 2018 – May 2019
+**Project: Generic search-based reference application, Jan 2018 – May 2019**
 The blueprint product teams used to build large corporate websites.
 
 - Redesigned the search module at the core of the application, built on the company's in-house search engine.
@@ -104,7 +104,7 @@ The blueprint product teams used to build large corporate websites.
 
 **Stack:** Angular, Redux, TypeScript, Node.js, Express, Web Components, Cypress, Docker
 
-#### Project: Reader application for a worldwide publisher, Jun 2013 – Dec 2017
+**Project: Reader application for a worldwide publisher, Jun 2013 – Dec 2017**
 A reader for lawyers, shipped on Android, iOS, macOS, and Windows, integrated into the customer's ecosystem.
 
 - Owned the hardest modules: cross-platform API, full-text search, background processing, persistence.
@@ -115,7 +115,7 @@ A reader for lawyers, shipped on Android, iOS, macOS, and Windows, integrated in
 
 ### Senior Software Developer, [VPI Systems Inc.](http://www.vpisystems.com/), **Feb 2001 – Feb 2013**
 
-#### Projects: OnePlan Transport, Network Optimizer, Network Configurator, TransportMaker
+**Projects: OnePlan Transport, Network Optimizer, Network Configurator, TransportMaker**
 CAD-like software for designing, dimensioning, optimizing, and planning optical networks.
 
 - Designed the application, domain, automation model, and architecture behind them.
