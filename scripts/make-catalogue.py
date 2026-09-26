@@ -4,9 +4,9 @@
 The catalogue is the long form of the resume, meant to be pasted into resume
 builders field by field: same content, but every bullet block under
 Professional Experience is announced with a "Key accomplishments" label, and
-the contact line is broken out into a "Contacts" section of "Label: value"
-rows. The resume itself drops the labels to save a page and keeps the contacts
-on one line.
+the contacts - which come from .env, not from the markdown - are written out as
+a "Contacts" section of "Label: value" rows. The resume itself drops the labels
+to save a page and keeps the contacts on one line.
 
 Usage: python3 make-catalogue.py <source.md> <output.md> [lang]
 
@@ -16,6 +16,8 @@ default, ru for cv-ru.md) picks the date, project and education patterns.
 import re
 import sys
 from pathlib import Path
+
+import contacts
 
 LINK = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 
@@ -30,7 +32,6 @@ LANGS = {
         "projects": r"Projects?:",
         "experience": "professional experience",
         "education": "education",
-        "remote": ("remote", "office"),
         "labels": {
             "accomplishments": "Key accomplishments:",
             "contacts": "Contacts:", "name": "Name", "title": "Title", "focus": "Focus",
@@ -48,7 +49,6 @@ LANGS = {
         "projects": r"Проекты?:",
         "experience": "опыт работы",
         "education": "образование",
-        "remote": ("удалённо", "удаленно", "офис"),
         "labels": {
             "accomplishments": "Ключевые достижения:",
             "contacts": "Контакты:", "name": "Имя", "title": "Должность", "focus": "Специализация",
@@ -88,40 +88,16 @@ def plain(text):
     return LINK.sub(r"\1", text).replace("**", "").strip()
 
 
-def contact_rows(line):
-    """The one-line contact paragraph as labelled rows a builder can map."""
-    rows = []
-    for part in (p.strip() for p in line.split("\u00b7")):
-        if not part:
-            continue
-        link = LINK.fullmatch(part)
-        url = link.group(2) if link else ""
-        text = link.group(1) if link else part
-        if url.startswith("mailto:"):
-            rows.append((label("email"), url[len("mailto:"):]))
-        elif "linkedin.com" in url:
-            rows.append((label("linkedin"), url))
-        elif "t.me" in url:
-            rows.append((label("telegram"), url))
-        elif re.fullmatch(r"[+\d][\d()\s-]{6,}", text):
-            rows.append((label("phone"), text))
-        elif any(word in text.lower() for word in LANG["remote"]):
-            rows.append((label("format"), text))
-        else:
-            rows.append((label("location"), text))
-    return rows
-
-
-def header(lines):
-    """Name, title, and contacts of cv.md as a Contacts block."""
+def header(lines, lang):
+    """Name, title, and contacts of cv.md as a Contacts block. The name and the
+    tagline are read off the top of the CV, the rest comes from .env."""
     name = lines[0].lstrip("# ").strip()
-    contacts = next(l for l in lines if "mailto:" in l)
     tagline = next(l for l in lines if l.startswith("**") and "mailto:" not in l)
     title, _, focus = plain(tagline).partition(" \u2014 ")
     rows = [(label("name"), name), (label("title"), title.strip())]
     if focus:
         rows.append((label("focus"), focus.strip()))
-    rows += contact_rows(contacts)
+    rows += [(label(key), value) for key, value in contacts.rows(lang)]
     return [label("contacts"), ""] + [f"  {k}: {v}" for k, v in rows]
 
 
@@ -220,9 +196,10 @@ def main():
     if len(args) < 2:
         sys.exit("usage: make-catalogue.py <source.md> <output.md> [lang]")
     src, out = Path(args[0]), Path(args[1])
-    set_language(args[2] if len(args) > 2 else "en")
-    md = src.read_text(encoding="utf-8")
-    out.write_text("\n".join(header(md.splitlines())) + "\n\n" + render(md), encoding="utf-8")
+    lang = args[2] if len(args) > 2 else "en"
+    set_language(lang)
+    md = contacts.expand(src.read_text(encoding="utf-8"), lang)
+    out.write_text("\n".join(header(md.splitlines(), lang)) + "\n\n" + render(md), encoding="utf-8")
     print(f"{out} written")
 
 

@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """Render a CV markdown file to a .docx that applicant tracking systems can read.
 
-Usage: python3 make-docx.py <source.md> <output.docx>
+Usage: python3 make-docx.py <source.md> <output.docx> [lang]
+
+The name and the contacts come from .env, not from the markdown, so the
+language (en by default, ru for cv-ru.md) picks which of them to fill in.
 
 The document is deliberately plain: real heading styles so a parser can find
 the sections, plain bullet lists, no columns, no tables, no text boxes. The
@@ -18,6 +21,8 @@ import re
 import sys
 import zipfile
 from pathlib import Path
+
+import contacts
 
 # make-pdf.py cannot be imported by name (the dash), so it is loaded by path.
 _spec = importlib.util.spec_from_file_location("make_pdf", Path(__file__).with_name("make-pdf.py"))
@@ -97,10 +102,11 @@ def convert(md):
 def main():
     args = sys.argv[1:]
     if len(args) < 2:
-        sys.exit("usage: make-docx.py <source.md> <output.docx>")
+        sys.exit("usage: make-docx.py <source.md> <output.docx> [lang]")
     src, out = Path(args[0]), Path(args[1])
+    lang = args[2] if len(args) > 2 else "en"
 
-    md = to_ascii(src.read_text(encoding="utf-8"))
+    md = to_ascii(contacts.expand(src.read_text(encoding="utf-8"), lang))
 
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
         for part, source in PART_FILES.items():

@@ -8,6 +8,9 @@ picks the date pattern used to float a heading's date range to the right; the
 Russian resume writes its dates as "окт. 2023 - наст. время", which the English
 pattern does not match.
 
+The name and the contacts are not in the markdown: contacts.py fills the
+placeholders in from .env before anything else runs.
+
 The output is the copy that goes into applicant tracking systems, so the
 typography is folded to ASCII (em dash, en dash, middot, curly quotes,
 trademark) - some parsers turn those characters into mush and glue the
@@ -25,6 +28,8 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
+
+import contacts
 
 PAGE_SIZE = "A4"
 PAGE_MARGIN = "8mm 16mm"
@@ -201,7 +206,7 @@ def main():
     if not chrome:
         sys.exit("no Chrome binary found")
 
-    source = to_ascii(src.read_text(encoding="utf-8"))
+    source = to_ascii(contacts.expand(src.read_text(encoding="utf-8"), lang))
 
     page = (
         f"<!doctype html><html lang='{lang}'><head><meta charset='utf-8'>"

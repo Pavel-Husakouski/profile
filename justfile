@@ -3,7 +3,8 @@
 
 set dotenv-load
 
-# the real names live in .env; the file names of the artifacts follow from them
+# the real names and contacts live in .env; cv-*.md holds only placeholders,
+# and the file names of the artifacts follow from the names
 role   := env_var_or_default("ROLE", "Nodejs-backend-fullstack")
 en_src := "cv-en.md"
 en_pdf := env_var_or_default("EN_NAME", "Pavel Husakouski") + " - " + role + ".pdf"
@@ -22,14 +23,14 @@ ru: (update "ru" ru_src ru_pdf)
 # every artifact of one CV; the DOCX and the catalogue are named after the PDF
 update lang src out:
     python3 scripts/make-pdf.py "{{src}}" "{{out}}" {{lang}}
-    python3 scripts/make-docx.py "{{src}}" "{{without_extension(out)}}.docx"
+    python3 scripts/make-docx.py "{{src}}" "{{without_extension(out)}}.docx" {{lang}}
     python3 scripts/make-catalogue.py "{{src}}" "catalogue-{{lang}}.generated.md" {{lang}}
 
 pdf src out lang="en":
     python3 scripts/make-pdf.py "{{src}}" "{{out}}" {{lang}}
 
-docx src out:
-    python3 scripts/make-docx.py "{{src}}" "{{out}}"
+docx src out lang="en":
+    python3 scripts/make-docx.py "{{src}}" "{{out}}" {{lang}}
 
 catalogue src out lang="en":
     python3 scripts/make-catalogue.py "{{src}}" "{{out}}" {{lang}}

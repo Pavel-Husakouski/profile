@@ -1,5 +1,5 @@
-# Pavel Husakouski
-[phusakouski@gmail.com](mailto:phusakouski@gmail.com) · [LinkedIn](https://www.linkedin.com/in/pavel-husakouski/) · +375(29)133-79-01 · [@Pauelito](https://t.me/Pauelito) · Minsk, Belarus · Office or remote
+# {{NAME}}
+[{{EMAIL}}](mailto:{{EMAIL}}) · [LinkedIn]({{LINKEDIN}}) · [{{PHONE}}](tel:{{PHONE_TEL}}) · [{{TELEGRAM}}]({{TELEGRAM_URL}}) · {{LOCATION}} · {{FORMAT}}
 
 **Senior Backend Engineer | Senior Fullstack Engineer (TypeScript/JavaScript/Node.js/Vue)** — platform SDKs, recovery of legacy systems
 
