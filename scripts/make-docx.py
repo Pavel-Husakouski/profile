@@ -3,8 +3,9 @@
 
 Usage: python3 make-docx.py <source.md> <output.docx> [lang]
 
-The name and the contacts come from .env, not from the markdown, so the
-language (en by default, ru for cv-ru.md) picks which of them to fill in.
+The phone, the location and the work format come from .env rather than the
+markdown, so the language (en by default, ru for cv-ru.md) picks which of them
+to fill in.
 
 The document is deliberately plain: real heading styles so a parser can find
 the sections, plain bullet lists, no columns, no tables, no text boxes. The

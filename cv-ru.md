@@ -1,7 +1,7 @@
 # Павел Гусаковский
-[{{EMAIL}}](mailto:{{EMAIL}}) · [LinkedIn]({{LINKEDIN}}) · [{{PHONE}}](tel:{{PHONE_TEL}}) · [{{TELEGRAM}}]({{TELEGRAM_URL}}) · {{LOCATION}} · {{FORMAT}}
+[phusakouski@gmail.com](mailto:phusakouski@gmail.com) · [LinkedIn](https://www.linkedin.com/in/pavel-husakouski/) · [{{PHONE}}](tel:{{PHONE_TEL}}) · [@Pauelito](https://t.me/Pauelito) · {{LOCATION}} · {{FORMAT}}
 
-**Senior Backend-инженер | Senior Fullstack-инженер (TypeScript/JavaScript/Node.js/Vue)** — платформенные SDK, восстановление legacy-систем
+**Senior Backend-инженер | Senior FullСтек-инженер (AI, TypeScript, JavaScript, Node.js, Vue)** — платформенные SDK, восстановление legacy-систем
 
 ## Кратко о себе
 
@@ -44,7 +44,7 @@ Backend мобильного приложения для записи звонк
 - Выявил и довёл до релиза недостающие продуктовые функции.
 - Автоматизировал runbook (диагностика, обслуживание, аналитика).
 
-**Stack:** Microservices, TypeScript, Node.js, Express, Koa, MySQL, BullMQ, Redis, NDA vendors, AWS, Docker
+**Стек:** Microservices, TypeScript, Node.js, Express, Koa, MySQL, BullMQ, Redis, NDA vendors, AWS, Docker
 
 **Проект: AI-ассистент для обучения, 100 тыс.+ пользователей, окт. 2023 – март 2026**
 Backend и админ-сайт мобильного приложения — помощника по домашним заданиям.
@@ -55,7 +55,7 @@ Backend и админ-сайт мобильного приложения — п�
 - Интегрировал аудит-пайплайн: сделал прозрачными расходы на внешние API с детализацией до запроса.
 - Вёл админ-панель, делал code review, интегрировал изменения, багфикс и релизы.
 
-**Stack:** TypeScript, Node.js, NestJS, Gemini, OpenAI, OpenAPI, PostgreSQL, Redis, Prometheus, Grafana, AWS, Docker, Mocha, GitLab
+**Стек:** TypeScript, Node.js, NestJS, Gemini, OpenAI, OpenAPI, PostgreSQL, Redis, Prometheus, Grafana, AWS, Docker, Mocha, GitLab
 
 **Проект: отправка/приём факсов, 1 млн+ пользователей, окт. 2023 – май 2025**
 Backend и инфраструктура мобильного приложения для факсов, построенного на трёх телефонных провайдерах.
@@ -66,7 +66,7 @@ Backend и инфраструктура мобильного приложени�
 - Восстановил аналитический пайплайн, сделав сбои прослеживаемыми.
 - Разработал модуль приёма факсов с автоматической закупкой виртуальных телефонных номеров.
 
-**Stack:** TypeScript, Node.js, Koa, PostgreSQL, BullMQ, Redis, NDA vendors, Prometheus, Grafana, AWS, Docker, Mocha
+**Стек:** TypeScript, Node.js, Koa, PostgreSQL, BullMQ, Redis, NDA vendors, Prometheus, Grafana, AWS, Docker, Mocha
 
 ### Lead Software Engineer, [Exadel](https://exadel.com/), **июнь 2013 – авг. 2023**
 
@@ -85,7 +85,7 @@ SDK-платформа, унифицирующая API долгоживущих 
 - Реанимировал OData-клиент: исправил кодогенерацию, билд, обновил до OData v4, добавил DSL запросов и достиг паритета с .NET/Java-версиями.
 - Написал DSL-библиотеку асимметричных матчеров, упростившую тесты.
 
-**Stack:** TypeScript, Node.js, NestJS, Mocha, Apache Benchmark, GraphQL, Docker, AWS, Java, .NET
+**Стек:** TypeScript, Node.js, NestJS, Mocha, Apache Benchmark, GraphQL, Docker, AWS, Java, .NET
 
 **Проект: движок edge-сервисов и межсервисного взаимодействия, май 2018 – июнь 2023**
 Микроплатформа для быстрой сборки API на стороне backend, frontend и микросервисов.
@@ -94,15 +94,15 @@ SDK-платформа, унифицирующая API долгоживущих 
 - Внедрил фреймворк в десятки команд, дорабатывая его на основе обратной связи.
 - Разрабатывал по TDD, с полным покрытием ради обратной совместимости.
 
-**Stack:** TypeScript, Express, Node.js, Mocha, Docker, GraphQL, AWS
+**Стек:** TypeScript, Express, Node.js, Mocha, Docker, GraphQL, AWS
 
-**Проект: Готовое архитектурное решение на основе поиска, янв. 2018 – май 2019**
-Стартер, по которому продуктовые команды строили крупные корпоративные сайты.
+**Проект: Платформа для крупных корпоративных сайтов, янв. 2018 – май 2019**
+Платформа-стартер, для разработки крупных корпоративных сайтов.
 
 - Переработал поисковый модуль на базе собственного движка компании.
 - Построил сквозную трассировку по всей платформе, сделав прохождение запросов диагностируемым.
 
-**Stack:** Angular, Redux, TypeScript, Node.js, Express, Web Components, Cypress, Docker
+**Стек:** Angular, Redux, TypeScript, Node.js, Express, Web Components, Cypress, Docker
 
 **Проект: приложение-читалка для международного издательства, июнь 2013 – дек. 2017**
 Читалка для юристов, выпущенная на Android, iOS, macOS и Windows и встроенная в экосистему заказчика.
@@ -111,7 +111,7 @@ SDK-платформа, унифицирующая API долгоживущих 
 - Разработал конвертер проприетарного формата книг (кастомный SAX/DOM-движок, рендеринг, оптимизация) для стабильного чтения сверхбольших книг где конкуренты дохли.
 - Совместно разрабатывал automation модель приложения; разработчики могли писать плагины — аренду книг итд.
 
-**Stack:** Angular, TypeScript, WebSQL, Cordova, NW.js, Node.js
+**Стек:** Angular, TypeScript, WebSQL, Cordova, NW.js, Node.js
 
 ### Senior Software Developer, [VPI Systems Inc.](http://www.vpisystems.com/), **фев. 2001 – фев. 2013**
 
@@ -122,7 +122,7 @@ CAD-подобное ПО для проектирования, расчёта р
 - Перепроектировал редактор сетей и 2D-визуализацию, добавив аналитические возможности.
 - Сократил потребление памяти и CPU в 10 раз при работе с крупными сетевыми моделями.
 
-**Stack:** .NET 1.0–3.5, LINQ, NUnit, GDI+, DevExpress
+**Стек:** .NET 1.0–3.5, LINQ, NUnit, GDI+, DevExpress
 
 ## Образование
 
