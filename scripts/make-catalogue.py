@@ -4,9 +4,10 @@
 The catalogue is the long form of the resume, meant to be pasted into resume
 builders field by field: same content, but every bullet block under
 Professional Experience is announced with a "Key accomplishments" label, and
-the contacts - which come from .env, not from the markdown - are written out as
-a "Contacts" section of "Label: value" rows. The resume itself drops the labels
-to save a page and keeps the contacts on one line.
+the contacts - which this form reads from .env rather than from the contact line
+of the markdown - are written out as a "Contacts" section of "Label: value" rows.
+The resume itself drops the labels to save a page and keeps the contacts on one
+line.
 
 Usage: python3 make-catalogue.py <source.md> <output.md> [lang]
 

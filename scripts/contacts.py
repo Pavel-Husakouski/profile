@@ -1,19 +1,21 @@
 #!/usr/bin/env python3
-"""The contact data of the CV: values in .env, placeholders in the markdown.
+"""The contact data of the CV the markdown does not write out itself.
 
-cv-en.md and cv-ru.md carry no personal data but the name in their heading -
-the contact line is written out placeholder by placeholder:
+The contact line lives in the markdown, so the layout of the line - which link
+carries which label, what separates the parts, in what order they run - stays
+visible where it is edited. The name, email, LinkedIn and Telegram are written
+out there in the clear; the phone and the two labels on the right are left as
+placeholders:
 
-    [{{EMAIL}}](mailto:{{EMAIL}}) - [LinkedIn]({{LINKEDIN}}) - {{PHONE}} ...
+    [you@example.com](mailto:you@example.com) - [LinkedIn](...) - [{{PHONE}}](tel:{{PHONE_TEL}}) - {{LOCATION}} ...
 
-so the sources stay shareable while the layout of the line - which link carries
-which label, what separates the parts, in what order they run - stays visible in
-the markdown where it is edited. The values live in .env, which git does not
-track, and every generator expands the placeholders before it does anything
-else.
+and every generator expands them from .env before it does anything else. EMAIL,
+LINKEDIN and TELEGRAM stay in .env for rows() alone - the Contacts block of the
+catalogue - which duplicates them: edit one, edit the other.
 
-The placeholders: NAME, EMAIL, PHONE, PHONE_TEL, LINKEDIN, TELEGRAM,
-TELEGRAM_URL, LOCATION, FORMAT. A value is looked up under the language prefix
+The placeholders, every one of them still honoured should a contact move back
+into .env: NAME, EMAIL, PHONE, PHONE_TEL, LINKEDIN, TELEGRAM, TELEGRAM_URL,
+LOCATION, FORMAT. A value is looked up under the language prefix
 first and then bare, so NAME reads EN_NAME for the English CV and RU_NAME for the Russian one,
 while EMAIL - the same in both - needs no prefix. The .env file wins over the
 process environment: it is the one place the values are written down.
