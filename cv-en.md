@@ -1,5 +1,5 @@
 # Pavel Husakouski
-[{{EMAIL}}](mailto:{{EMAIL}}) · [LinkedIn]({{LINKEDIN}}) · [{{PHONE}}](tel:{{PHONE_TEL}}) · [{{TELEGRAM}}]({{TELEGRAM_URL}}) · {{LOCATION}} · {{FORMAT}}
+[phusakouski@gmail.com](mailto:phusakouski@gmail.com) · [linkedin.com/in/pavel-Husakouski/](https://www.linkedin.com/in/pavel-Husakouski/) · [{{PHONE}}](tel:{{PHONE_TEL}}) · [t.me/Pauelito](https://t.me/Pauelito) · {{LOCATION}} · {{FORMAT}}
 
 **Senior Backend Engineer | Senior Fullstack Engineer (TypeScript/JavaScript/Node.js/Vue)** — platform SDKs, recovery of legacy systems
 
