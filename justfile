@@ -4,10 +4,6 @@
 
 set dotenv-load
 
-# the English CV that also goes to Drive under a role-free name
-main_cv := "Pavel Husakouski - Nodejs-backend-fullstack.pdf"
-main_cv_alias := "Pavel Husakouski - CV.pdf"
-
 # where the built PDFs are published; the folder must already exist on the remote
 drive := env_var_or_default("DRIVE_DIR", "MyDrive:@cv")
 
@@ -54,11 +50,8 @@ upload file name=file_name(file):
 [private]
 upload-pdf src: (upload without_extension(src) + ".pdf")
 
-# the main English PDF on Drive under the role-free name
-upload-cv: (upload main_cv main_cv_alias)
-
 # every PDF on Drive
-upload-all: (each "upload-pdf") upload-cv
+upload-all: (each "upload-pdf")
 
 # rebuild every artifact and publish the PDFs
 publish: default upload-all

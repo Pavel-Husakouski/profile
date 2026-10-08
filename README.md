@@ -80,9 +80,7 @@ RU_FORMAT="Офис или удалённо"
 | `just build [src]` | PDF одного исходника; без аргумента — всех |
 | `just watch [src...]` | пересборка PDF на каждое сохранение; без аргументов — все резюме, включая добавленные на ходу |
 | `just upload <file> [name]` | один файл на Google Drive |
-| `just upload-cv` | основной английский PDF на Drive под именем `Pavel Husakouski - CV.pdf` |
-| `just upload-all` | все PDF на Drive, плюс `upload-cv` |
+| `just upload-all` | все PDF на Drive |
 | `just publish` | `just` + `upload-all` |
 
 `out` по умолчанию — имя исходника с расширением `.pdf`, `lang` — по заголовку.
-Какой PDF идёт в `upload-cv`, задаёт `main_cv` в `justfile`.

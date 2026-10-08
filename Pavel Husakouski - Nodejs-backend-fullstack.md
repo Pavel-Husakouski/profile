@@ -1,129 +1,115 @@
 # Pavel Husakouski
 [phusakouski@gmail.com](mailto:phusakouski@gmail.com) · [linkedin.com/in/pavel-Husakouski/](https://www.linkedin.com/in/pavel-Husakouski/) · [{{PHONE}}](tel:{{PHONE_TEL}}) · [t.me/Pauelito](https://t.me/Pauelito) · {{LOCATION}} · {{FORMAT}}
 
-**Senior Backend Engineer | Senior Fullstack Engineer (TypeScript/JavaScript/Node.js/Vue)** — platform SDKs, recovery of legacy systems
+**Senior Backend Engineer | Senior Fullstack Engineer** — I build platforms that  of teams run on; I bring legacy products back into service
 
 ## Professional Summary
 
-- 25 years in IT: 10 building a platform and frameworks for product teams, 3 as the sole backend engineer of 3 products.
-- Build Core-components product teams depends on: an OData SDK and framework, a microservice communication engine shipped from 1.11 to 6.x.
-- Technical coordination without a management title: specifications, recorded decisions, and settled ownership across mobile, QA, and product.
-- Recover broken systems: restored a product spread across 30 repositories to a deployable state, cut fax delivery failures from 10–20% to 5–10%, revived an abandoned OData client.
-- Set engineering standards beyond my own code: the grading system for a 1000+ person company, interviewer training, two years of university teaching.
+- For the last 3 years — the sole backend engineer of three products with an audience of 1M+ users.
+- Actively use LLMs in production and AI tools in development.
+- Experience building platforms: components and tooling that scale the work of dozens of product teams.
+- Record decisions, work out APIs, align requirements across cross-functional teams.
+- Restored, stabilized, and returned to production more than a dozen legacy products.
+- Establish engineering standards: built the grading and career-path system for a 1000+ person company; trained interviewers; taught at the Belarusian State University for 2 years.
 
 ## Skills
 
-- **Backend:** TypeScript, JavaScript, Node.js, NestJS, Express, Koa, REST, GraphQL, OData, microservices, distributed systems, SDK and framework design.
-- **AI:** Claude Code, GitHub Copilot, spec-driven development, OpenAI, Anthropic, Gemini APIs.
-- **Telephony:** Telnyx, Twilio, Plivo, Documo, SrFax, Nexmo, Avoxi.
-- **Data:** PostgreSQL, MySQL, Redis, DynamoDB, Elasticsearch, SQL.
-- **Async:** BullMQ, NATS.
-- **Cloud and CI/CD:** AWS, Docker, GitLab CI/CD.
-- **Observability:** Grafana, Prometheus, ELK, Kibana, tracing.
-- **Testing:** TDD, unit testing, integration testing, E2E, Mocha, Cypress.
-- **Also:** Vue.js, Pinia, Angular, React, C#, .NET, Python, C++, Golang.
+- **Core:** Node.js, TypeScript, JavaScript, Microservices, REST API, GraphQL, OData, System Design, Legacy Migration.
+- **Cloud & Infrastructure:** AWS, Docker, GitLab CI/CD, NATS, BullMQ, Linux.
+- **Databases & Storage:** PostgreSQL, MySQL, Redis, DynamoDB, Elasticsearch.
+- **Frontend & Client Apps:** Vue.js, React, Angular, Pinia.
+- **Engineering Practices:** TDD, CI/CD, Unit/Integration/E2E Testing, Observability & Monitoring (Grafana, Prometheus, ELK).
+- **Domain Expertise:** AI Integration & LLM Workflows (Claude Code, Copilot, OpenAI/Anthropic/Gemini APIs), Cloud Communications / Telephony APIs (Twilio, Telnyx, etc.).
 - **Languages:** English — B2 (Upper-Intermediate), Russian — Native.
 
 ## Professional Experience
 
 ### Backend Software Engineer, AlpariGroup, **Oct 2023 – Present**
 
-- Owned the backend and the infrastructure of three mobile products in parallel — 100K+ to 1M+ users each, tens of thousands of lines each — as the sole backend engineer for five mobile developers and up to three QA.
-- Designed and negotiated the shape of APIs for Android, iOS, and admin clients.
-- Recovered three legacy products to a deployable, stable state.
-- Integrated AI tooling, Claude Code & GitHub Copilot & spec-driven development, cutting feature delivery time by ~50%.
-- Maintained the API and infrastructure documentation (Confluence, PlantUML) for QA and the mobile teams.
-- Introduced unit, integration, and E2E test suites; post-deployment defects dropped to isolated edge cases.
-- Made logging and monitoring transparent (Grafana, ELK), so incidents became diagnosable.
+- Scale & autonomy: Delivered all backend development, infrastructure, and releases for three mobile products with millions of users, working closely with the mobile teams.
+- Process acceleration: Introduced AI development tools (Claude Code, Copilot), speeding up feature delivery to production by roughly 50%.
+- Stability & quality: Restored a stable release cycle for 3 legacy products. Covered the services with tests and set up monitoring (Grafana, ELK), cutting post-release defects to a handful and making failure diagnosis instant.
+- Development transparency: Maintained documentation to remove the team's dependency on a single expert and speed up feature integration.
 
-**Project: mobile call recording assistant, 1M+ users, Oct 2023 – Present**
-The backend for a mobile application for call recording and voice-to-text transcription.
+**Project: Mobile assistant: call recording/voice recorder, 1M+ users, Oct 2023 – Present**
 
-- Inherited a product fragmented across 30 repositories, with code missing from version control and package versions adrift; reconstructed the missing pieces and restored the build and deployment of the whole application.
-- Reworked the registration, purchase, and subscription handling, migrating the purchases to StoreKit 2.
-- Identified several product features that had been missing and drove them to release.
-- Automated the runbook — troubleshooting, maintenance, analytics.
+- Rescue: Restored an derelict project, critically out of sync across 30 repositories: infrastructure, build, deployment; returned the product to a stable release cycle.
+- Analytics: Helped to enable in-depth analytics. Migrated the payment system to Apple's current stack (StoreKit 2) and reworked registration.
+- Product development: Identified and brought to release key product and analytics features that increased the app's value for users.
+- Process optimization: Reduced the time spent on system maintenance. Automated routine diagnostics and technical support with AI tools.
 
 **Stack:** Microservices, TypeScript, Node.js, Express, Koa, MySQL, BullMQ, Redis, NDA vendors, AWS, Docker
 
-**Project: AI education assistant, 100K+ users, Oct 2023 – Mar 2026**
-The backend and admin site for the mobile homework assistant application.
+**Project: AI learning assistant, 100K+ users, Oct 2023 – Mar 2026**
 
-- Owned the backend and the infrastructure, and drove the API for the mobile client.
-- Evaluated and benchmarked RAG and vector search to guide the architecture choice.
-- Redesigned the agentic loop (Gemini, OpenAI): the crashes, the hangs, and the truncated answers stopped.
-- Integrated audit pipeline, enabling precise request- and user-level traceability for external API spend.
-- Led the admin site: built its foundation, then reviewed, hardened, and released the frontend developers' work.
+- Service quality: Modernized the core integration with frontier language models (Gemini, OpenAI), eliminating crashes, hangs, and truncated responses, which critically improved the user experience.
+- Product development: Designed and prototyped a new architecture (RAG, vector search) to enable new user scenarios.
+- Financial transparency: Built detailed monitoring and control of external AI service usage, making the product's operating costs transparent and optimizable.
+- Integration: Investigated and closed "blind spots" in the network communication between the client and the backend.
 
-**Stack:** TypeScript, Node.js, NestJS, Gemini, OpenAI, OpenAPI, PostgreSQL, Redis, Prometheus, Grafana, AWS, Docker, Mocha, GitLab
+**Stack:** TypeScript, Node.js, NestJS, Gemini, OpenAI, PostgreSQL, Redis, Prometheus, Grafana, AWS, Docker
 
 **Project: fax transmission/reception, 1M+ users, Oct 2023 – May 2025**
-The backend and infrastructure for a mobile fax application built on three telephony vendors.
 
-- Owned it from the vendor integrations to production support, and set the direction for the mobile developers building against the API.
-- Raised fax delivery success from 80–90% to 90–95%.
-- Diagnosed and resolved infrastructure instability, database bottlenecks, and defect backlog causing restarts and hangs.
-- Reworked the pipeline behind the dead analytics — only then did the failures become traceable.
-- Built fax reception end-to-end, including automated procurement of virtual numbers from the vendors.
+- Service quality: Raised the fax delivery success rate from 80% to 90%.
+- Product development: Designed and implemented fax reception, automated the purchase of phone numbers and their in-app assignment to users, added user profile and inbox.
+- Rescue: Eliminated critical and failure-prone spots in the architecture, infrastructure and the database.
+- Observability: Added end-to-end analytics and failure monitoring.
 
 **Stack:** TypeScript, Node.js, Koa, PostgreSQL, BullMQ, Redis, NDA vendors, Prometheus, Grafana, AWS, Docker, Mocha
 
 ### Lead Software Engineer, [Exadel](https://exadel.com/), **Jun 2013 – Aug 2023**
 
-- Mentored software engineers, growing them from intern and junior to senior.
-- Taught web application engineering at the Belarusian State University for two years on behalf of Exadel.
-- Architected the engineering grading system, assessment, and career paths for a 1000+ person company.
-- Trained the engineers who conducted the technical interviews.
-
 **Project: Inter-service communication platform, May 2019 – Jul 2023**
 An SDK platform unifying the API of long-lived RESTful services across the department's dozens of product teams.
 
-- Owned the TypeScript/Node side of the platform SDK — 100K+ lines — in a multi-stack team of six.
-- Implemented the server-side OData SDK — parsing/interpretation/(de)serialization of a SQL-like query language.
-- Built a server-side framework for the SDK to run against.
-- Optimized the SDK to achieve performance parity with the .NET and Java implementations.
-- Revived the abandoned OData client: fixed the broken code generation and build, brought it to OData 4 and feature parity with the .NET and Java clients, and added a query-builder DSL.
-- Wrote an asymmetric matcher DSL library for partial expectations under TDD, keeping the suite readable as it grew.
+- R&D and core: Built the core of the platform's TypeScript part, implemented the server-side OData SDK на NodeJS, optimized the performance to the level of the mature .NET and Java counterpart. 
+- Ecosystem scaling: Developed and evolved the SDK platform that unified the APIs and inter-service communication of dozens of product teams with different tech stacks.
+- Rescue: Modernized the abandoned OData client (upgrade to v4, improved code generation and DSL), bringing it back into active use by developers.
+- Quality: achieved high quality. Implemented a DSL for asymmetric matchers to achieve dense test coverage.
 
 **Stack:** TypeScript, Node.js, NestJS, Mocha, Apache Benchmark, GraphQL, Docker, AWS, Java, .NET
 
-**Project: An edge-service and microservice communication engine, May 2018 – Jun 2023**
-A micro-platform for rapid API building across backend, frontend, and microservices.
+**Project: Framework for rapid API bootstrapping, May 2018 – Jun 2023**
+A lightweight framework for product teams — APIs for backend, frontend, and microservices.
 
-- Owned the framework from version 1.11 to 6.x: designed and implemented it end-to-end.
-- Carried dozens of consuming teams through adoption and hardened the framework with every finding.
-- Developed under TDD, with a test suite extensive enough to keep the major-version upgrades safe.
+- Quality: Eliminated the risk of failures for dependent teams, ensured strict backward compatibility through deep test coverage.
+- Ownership: Owned the framework, leading its evolution from version 1.11 to 6.x.
+- Team autonomy: Provided clear documentation and migration paths, letting developers adopt the platform quickly and painlessly without my involvement.
 
 **Stack:** TypeScript, Express, Node.js, Mocha, Docker, GraphQL, AWS
 
-**Project: Generic search-based reference application, Jan 2018 – May 2019**
-The blueprint product teams used to build large corporate websites.
+**Project: Platform for launching corporate websites, Jan 2018 – May 2019**
+A platform for quickly starting corporate websites, built around the company's search engine.
 
-- Redesigned the search module at the core of the application, built on the company's in-house search engine.
-- Built platform-wide tracing, making request flows diagnosable.
+- Test automation: To eliminate false positives developed and introduced an approach to E2E tests.
+- Monitoring: Developed and introduced an approach to platform diagnostics and tracing.
 
 **Stack:** Angular, Redux, TypeScript, Node.js, Express, Web Components, Cypress, Docker
 
-**Project: Reader application for a worldwide publisher, Jun 2013 – Dec 2017**
-A reader for lawyers, shipped on Android, iOS, macOS, and Windows, integrated into the customer's ecosystem.
+**Project: Professional reader for an international publisher, Jun 2013 – Dec 2017**
+A reader for lawyers, embedded in the publisher's ecosystem, released on Android, iOS, macOS, and Windows.
 
-- Owned the hardest modules: cross-platform API, full-text search, background processing, persistence.
-- Built the in-house converter for the proprietary book format (custom SAX/DOM engine, rendering, optimization), enabling ultra-large files to render where competing readers crashed.
-- Co-authored the application automation model, which let developers write plugin-like modules, e.g., renting.
+- Architecture: Designed and owned the key cross-platform modules (shared API, search, data processing) for four operating systems (Android, iOS, macOS, Windows).
+- Performance: Added support for ultra-large books on which competing apps crashed. Developed a converter for the proprietary book format (custom SAX/DOM engine, rendering, optimization).
+- Development acceleration: Developed the application automation model — developers could extend it with modules (e.g., a book rental system).
 
-**Stack:** Angular, TypeScript, WebSQL, Cordova, NW.js, Node.js
+**Stack:** Angular, TypeScript, WebSQL, Cordova, NW.js, Node.js, cross-platform
 
 ### Senior Software Developer, [VPI Systems Inc.](http://www.vpisystems.com/), **Feb 2001 – Feb 2013**
 
-**Projects: OnePlan Transport, Network Optimizer, Network Configurator, TransportMaker**
-CAD-like software for designing, dimensioning, optimizing, and planning optical networks.
+**Products: OnePlan Transport, Network Optimizer, Network Configurator, TransportMaker**
+Development of complex CAD-like software for designing, optimizing, and planning optical networks.
 
-- Designed the application, domain, automation model, and architecture behind them.
-- Redesigned the network editor and 2D visualization to add analytic capabilities.
-- Optimized the application for large-scale models: 10x less memory and CPU.
+- Architecture: Designed and implemented the domain model, the automation model, and the visualization architecture.
+- User experience: Expanded the analytic capabilities of the application by redesigning the network editor.
+- Performance: Optimized processing of large-scale network models, reducing memory and CPU usage by 10x.
+- Rescue: reengineered a key visualization component, which made the other improvements possible.
 
-**Stack:** .NET 1.0–3.5, LINQ, NUnit, GDI+, DevExpress
+**Stack:** .NET, LINQ, NUnit, GDI+, WPF, DevExpress
 
 ## Education
 
-Belarusian State University of Informatics and Radioelectronics. Engineer's degree, Computer Science, 1995 – 2002
+Belarusian State University of Informatics and Radioelectronics.
+Faculty of Computer Systems and Networks.
+Major: Computers, Systems, and Networks.
