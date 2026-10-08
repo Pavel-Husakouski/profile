@@ -1,8 +1,6 @@
 .idea/
 *.pdf
 __pycache__/
-*.docx
-*.generated.md
 vacancies
 extras
 .*

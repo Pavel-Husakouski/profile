@@ -3,10 +3,10 @@
 
 Usage: python3 make-pdf.py <source.md> <output.pdf> [lang]
 
-The language (en by default, ru for cv-ru.md) sets the document language and
-picks the date pattern used to float a heading's date range to the right; the
-Russian resume writes its dates as "окт. 2023 - наст. время", which the English
-pattern does not match.
+The language (passed in, or read off the title by contacts.lang_of) sets the
+document language and picks the date pattern used to float a heading's date
+range to the right; the Russian resume writes its dates as
+"окт. 2023 - наст. время", which the English pattern does not match.
 
 The name and the contacts are not in the markdown: contacts.py fills the
 placeholders in from .env before anything else runs.
@@ -200,7 +200,7 @@ def main():
     if len(args) < 2:
         sys.exit("usage: make-pdf.py <source.md> <output.pdf> [lang]")
     src, out = Path(args[0]), Path(args[1])
-    lang = args[2] if len(args) > 2 else "en"
+    lang = args[2] if len(args) > 2 else contacts.lang_of(src.read_text(encoding="utf-8"))
     set_language(lang)
     chrome = shutil.which("google-chrome-stable") or shutil.which("chromium") or shutil.which("chrome")
     if not chrome:

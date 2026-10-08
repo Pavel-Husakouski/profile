@@ -9,9 +9,7 @@ placeholders:
 
     [you@example.com](mailto:you@example.com) - [LinkedIn](...) - [{{PHONE}}](tel:{{PHONE_TEL}}) - {{LOCATION}} ...
 
-and every generator expands them from .env before it does anything else. EMAIL,
-LINKEDIN and TELEGRAM stay in .env for rows() alone - the Contacts block of the
-catalogue - which duplicates them: edit one, edit the other.
+and every generator expands them from .env before it does anything else.
 
 The placeholders, every one of them still honoured should a contact move back
 into .env: NAME, EMAIL, PHONE, PHONE_TEL, LINKEDIN, TELEGRAM, TELEGRAM_URL,
@@ -28,13 +26,6 @@ from pathlib import Path
 ENV_FILE = Path(__file__).resolve().parent.parent / ".env"
 
 PLACEHOLDER = re.compile(r"\{\{\s*([A-Z_]+)\s*\}\}")
-
-# The contacts of the Contacts block of the catalogue, in the order it prints
-# them, and the label key make-catalogue.py writes for each.
-ROW_LABELS = {
-    "EMAIL": "email", "LINKEDIN": "linkedin", "PHONE": "phone",
-    "TELEGRAM_URL": "telegram", "LOCATION": "location", "FORMAT": "format",
-}
 
 _values = None
 
@@ -87,10 +78,15 @@ def value(key, lang):
     return text
 
 
-def rows(lang):
-    """The contacts as (label key, value) pairs for the catalogue: links as
-    links - a resume builder wants the URL, not the anchor text."""
-    return [(label, value(key, lang)) for key, label in ROW_LABELS.items() if value(key, lang)]
+CYRILLIC = re.compile(r"[\u0400-\u04FF]")
+
+
+def lang_of(md):
+    """The language of a CV: ru when its title - the "# Name" line - is written
+    in Cyrillic, en otherwise. The scripts fall back to it when no language is
+    passed in, so a new CV needs no entry anywhere to be built right."""
+    title = next((line for line in md.splitlines() if line.startswith("# ")), "")
+    return "ru" if CYRILLIC.search(title) else "en"
 
 
 def expand(md, lang):
