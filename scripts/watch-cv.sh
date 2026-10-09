@@ -1,21 +1,21 @@
 #!/usr/bin/env bash
 # Rebuild a CV PDF whenever its markdown changes.
 #
-#   ./scripts/watch-cv.sh                          # every "<Name> - <Role>.md"
-#   ./scripts/watch-cv.sh "Pavel Husakouski - Nodejs-backend-fullstack.md"
+#   ./scripts/watch-cv.sh                          # every "cv/<Name> - <Role>.md"
+#   ./scripts/watch-cv.sh "cv/Pavel Husakouski - Nodejs-backend-fullstack.md"
 #   just watch                                     # the same, through the justfile
 #
 # With no arguments the watch is a glob, so a CV added while it runs is picked
 # up too. The rebuild goes back through "just build <file>", which names the
-# PDF after its source.
+# PDF after its source and puts it in dist/.
 #
 # Needs node (for npx), just and Chrome; Chrome is reached through make-pdf.py.
 set -euo pipefail
-# the CV sources and the artifacts live in the repository root, one level up
+# the justfile lives in the repository root, one level up; the sources are in cv/
 cd "$(dirname "$0")/.."
 
 if [ "$#" -eq 0 ]; then
-  set -- "* - *.md"
+  set -- "cv/* - *.md"
 fi
 
 # --initial builds once at start, so every PDF matches its source right away.

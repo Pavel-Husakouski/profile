@@ -1,11 +1,15 @@
-# Build the CV artifacts. A CV is any "<Name> - <Role>.md" in the repository
-# root: its PDF takes the same name, its language is read off its title
+# Build the CV artifacts. A CV is any "<Name> - <Role>.md" in cv/: its PDF
+# takes the same name and lands in dist/, its language is read off its title
 # (see lang_of in scripts/contacts.py), so a new variant needs no entry here.
 
 set dotenv-load
 
 # where the built PDFs are published; the folder must already exist on the remote
 drive := env_var_or_default("DRIVE_DIR", "MyDrive:@cv")
+
+# the CV sources and the built PDFs
+src_dir := "cv"
+dist_dir := "dist"
 
 # the PDF of every CV
 default: (each "pdf")
@@ -16,12 +20,13 @@ each recipe:
     #!/usr/bin/env bash
     set -euo pipefail
     shopt -s nullglob
-    for src in *" - "*.md; do
+    for src in {{src_dir}}/*" - "*.md; do
       just {{recipe}} "$src"
     done
 
-# the PDF of one CV, named after its source; the language is read off the source unless given
-pdf src out=(without_extension(src) + ".pdf") lang="":
+# the PDF of one CV in dist/, named after its source; the language is read off the source unless given
+pdf src out=(dist_dir + "/" + file_stem(src) + ".pdf") lang="":
+    mkdir -p "$(dirname "{{out}}")"
     python3 scripts/make-pdf.py "{{src}}" "{{out}}" {{lang}}
 
 # the PDF of one source file; an empty argument (the watcher's first run) builds every CV
@@ -46,12 +51,14 @@ upload file name=file_name(file):
     after="$(drive_id "$dest")"
     echo "id after:  ${after:--}"
 
-# the PDF of one source on Drive
-[private]
-upload-pdf src: (upload without_extension(src) + ".pdf")
-
-# every PDF on Drive
-upload-all: (each "upload-pdf")
+# every PDF in dist/ on Drive, one upload each, so nothing on Drive is ever deleted
+upload-all:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    shopt -s nullglob
+    for pdf in {{dist_dir}}/*.pdf; do
+      just upload "$pdf"
+    done
 
 # rebuild every artifact and publish the PDFs
 publish: default upload-all

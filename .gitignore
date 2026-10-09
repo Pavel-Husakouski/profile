@@ -1,5 +1,6 @@
 .idea/
 *.pdf
+dist/
 __pycache__/
 vacancies
 extras
