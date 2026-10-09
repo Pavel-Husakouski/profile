@@ -1,7 +1,7 @@
 # Pavel Husakouski
 [phusakouski@gmail.com](mailto:phusakouski@gmail.com) · [linkedin.com/in/pavel-Husakouski/](https://www.linkedin.com/in/pavel-Husakouski/) · [{{PHONE}}](tel:{{PHONE_TEL}}) · [t.me/Pauelito](https://t.me/Pauelito) · {{LOCATION}} · {{FORMAT}}
 
-**Senior Backend Engineer | Senior Fullstack Engineer** — I build platforms that  of teams run on; I bring legacy products back into service
+**Backend Developer | Fullstack Developer** — I build platforms that  of teams run on; I bring legacy products back into service
 
 ## Professional Summary
 

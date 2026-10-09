@@ -1,7 +1,7 @@
 # Павел Гусаковский
 [phusakouski@gmail.com](mailto:phusakouski@gmail.com) · [linkedin.com/in/pavel-Husakouski/](https://www.linkedin.com/in/pavel-Husakouski/) · [{{PHONE}}](tel:{{PHONE_TEL}}) · [t.me/Pauelito](https://t.me/Pauelito) · {{LOCATION}} · {{FORMAT}}
 
-**Senior Backend-инженер | Senior Fullstack-инженер** — строю платформы, на которых работают десятки команд; возвращаю в строй legacy продукты
+**Backend-developer | Fullstack-developer** — строю платформы, на которых работают десятки команд; возвращаю в строй legacy продукты
 
 ## Кратко о себе
 
